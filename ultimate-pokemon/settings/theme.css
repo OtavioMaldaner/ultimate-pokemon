@@ -1,0 +1,32 @@
+@font-face {
+font-family: 'Poppins';
+    src: url('./fonts/poppins/Poppins-Light.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+:root {
+    /* Colors */
+    --primary-color: #f89132;
+    --secondary-color: #132a34;
+    --primary-text-color: #090909;
+    --seconadry-text-color: #e7e7e7;
+
+    /* Fonts */
+    --main-font: 'Poppins';
+
+    /* Font sizes */
+    --font-gg: 30px;
+    --font-g: 27px;
+    --font-mm: 24px;
+    --font-m: 21px;
+    --font-pp: 18px;
+    --font-p: 15px;
+
+    /* Screen breaks */
+    --screen-mobileS: 320px;
+    --screen-mobileM: 375px;
+    --screen-mobileL: 425px;
+    --screen-tablet: 768px;
+    --screen-laptop: 1024px;
+    --screen-laptopL: 1440px;
+}
