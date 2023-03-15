@@ -23,8 +23,7 @@ body {
 
 .homepage-util-area {
     min-width: var(--screen-mobileS);
-    /* height: 100%;
-    width: 100%; */
+    width: 80%;
     max-width: var(--screen-laptop);
 }
 

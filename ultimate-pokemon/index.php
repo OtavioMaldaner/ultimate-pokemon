@@ -2,7 +2,7 @@
 require_once __DIR__.'/settings/config.php';
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +19,7 @@ require_once __DIR__.'/settings/config.php';
                     <h1>Bem-vindo ao Ultimate Pokémon</h1>
                 </div>
                 <div class="hp-subtitle">
-                    <h3>Plataforma criada para a comunidade IFRS batalhar com seus pokemons.</h3>
+                    <h3>Plataforma criada para a comunidade IFRS batalhar com seus pokémons.</h3>
                 </div>
             </div>
             <div class="hp-mid-part">
