@@ -1,0 +1,21 @@
+{
+    "name": "otavio.maldaner/ultimate-pokemon",
+    "authors": [
+        {
+            "name": "Marcelo José Griebler Ost",
+            "email": "marcelo.ost@aluno.feliz.ifrs.edu.br"
+        }, {
+            "name": "Matheus Persch",
+            "email": "matheus.persch@aluno.feliz.ifrs.edu.br"
+        }, {
+            "name": "Otávio João Maldaner",
+            "email": "otavio.maldaner@aluno.feliz.ifrs.edu.br"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    }
+}
