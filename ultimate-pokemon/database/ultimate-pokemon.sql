@@ -27,14 +27,28 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `user`
 --
 
-CREATE TABLE `user` (
-  `idUser` tinyint(4) NOT NULL,
+CREATE TABLE `player` (
+  `idPlayer` tinyint(4) NOT NULL,
   `email` varchar(100) NOT NULL,
   `nickname` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `senha` varchar(255) NOT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 COMMIT;
+
+CREATE TABLE `pokemon` (
+  'idPokemon' tinyint(4) NOT NULL,
+  'idPlayer'  tinyint(4) ,
+  'nome' varchar(100) NOT NULL ,
+  'peso' float(100) NOT NULL,
+  'altura' float(100) NOT NULL, 
+  'tipo' varchar(255) NOT NULL,
+  'over' tinyint(5) NOT NULL    
+)
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
