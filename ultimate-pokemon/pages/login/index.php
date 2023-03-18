@@ -3,13 +3,13 @@
 require_once __DIR__."/../../settings/config.php";
 
 if (isset($_POST["button"])) {
-    $user = new Player();
-    $user->constructLogin($_POST["email"], $_POST["password"]);
+    $player = new Player();
+    $player->constructLogin($_POST["email"], $_POST["password"]);
     
-    if ($user->authenticate()) {
+    if ($player->authenticate()) {
         header("location: ../home");
     } else {
-        header("location: ../home");
+        header("location: index.php");
     }
 }
 
