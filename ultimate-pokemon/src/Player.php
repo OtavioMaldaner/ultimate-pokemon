@@ -74,7 +74,7 @@ public function save(): bool
 
         else {
             $this->senha = password_hash($this->senha,PASSWORD_BCRYPT);
-            $sql = "INSERT INTO user (email,senha,nickName) VALUES ('{$this->email}','{$this->senha}','{$this->nickname}')";
+            $sql = "INSERT INTO player (email,senha,nickName) VALUES ('{$this->email}','{$this->senha}','{$this->nickname}')";
         }
         
         return $connection->execute($sql);
@@ -144,7 +144,7 @@ public function save(): bool
     public static function refreshSession(): void
     {
         $connection = new MySQL();
-        $sql = "SELECT idPlayer, email, nickName FROM user WHERE idPlayer = {$_SESSION['idPlayer']}";
+        $sql = "SELECT idPlayer, email, nickName FROM player WHERE idPlayer = {$_SESSION['idPlayer']}";
         $res = $connection->query($sql);
 
         $_SESSION['idPlayer'] = $res[0]['idPlayer'];
@@ -152,14 +152,5 @@ public function save(): bool
         $_SESSION['nickName'] = $res[0]['nickName'];
         
     }
-
-
-
-
-
-
-
-
-
 }
 ?>

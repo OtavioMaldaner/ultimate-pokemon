@@ -1,6 +1,6 @@
 <?php
 
 define("HOST", "localhost");
-define("USER", "aluno");
-define("PASSWORD", "aluno");
-define("DATABASE", "ultimatepokemon");
+define("USER", "root");
+define("PASSWORD", "");
+define("DATABASE", "ultimate-pokemon");

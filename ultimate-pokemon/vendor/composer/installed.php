@@ -3,7 +3,7 @@
         'name' => 'otavio.maldaner/ultimate-pokemon',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '67774482540799ae3b59c3452a99d15ca64347e1',
+        'reference' => '116d05ed380509424c8a7619d63a433a6249ded5',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'otavio.maldaner/ultimate-pokemon' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '67774482540799ae3b59c3452a99d15ca64347e1',
+            'reference' => '116d05ed380509424c8a7619d63a433a6249ded5',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

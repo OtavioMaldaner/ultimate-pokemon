@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15-Mar-2023 às 13:08
+-- Tempo de geração: 18-Mar-2023 às 18:07
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.1.12
 
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `user`
+-- Estrutura da tabela `player`
 --
 
 CREATE TABLE `player` (
@@ -32,23 +32,183 @@ CREATE TABLE `player` (
   `email` varchar(100) NOT NULL,
   `nickname` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL
-
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-COMMIT;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pokemon`
+--
 
 CREATE TABLE `pokemon` (
-  'idPokemon' tinyint(4) NOT NULL,
-  'idPlayer'  tinyint(4) ,
-  'nome' varchar(100) NOT NULL ,
-  'peso' float(100) NOT NULL,
-  'altura' float(100) NOT NULL, 
-  'tipo' varchar(255) NOT NULL,
-  'over' tinyint(5) NOT NULL    
-)
+  `idPokemon` smallint(6) NOT NULL,
+  `idPlayer` tinyint(4) DEFAULT NULL,
+  `nome` varchar(100) NOT NULL,
+  `peso` float NOT NULL,
+  `altura` float NOT NULL,
+  `tipo` varchar(255) NOT NULL,
+  `over` tinyint(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `pokemon`
+--
+
+INSERT INTO `pokemon` (`idPokemon`, `idPlayer`, `nome`, `peso`, `altura`, `tipo`, `over`) VALUES
+(1, NULL, 'Bulbasaur', 6.9, 0.7, 'Grama / Veneno', 78),
+(2, NULL, 'Ivysaur', 13, 1, 'Grama / Veneno', 84),
+(3, NULL, 'Venusaur', 100, 2, 'Grama / Veneno', 88),
+(4, NULL, 'Charmander', 8.5, 0.6, 'Fogo', 78),
+(5, NULL, 'Charmeleon', 19, 1.1, 'Fogo', 84),
+(6, NULL, 'Charizard', 90.5, 1.7, 'Fogo / Voador', 90),
+(7, NULL, 'Squirtle', 9, 0.5, 'Água', 78),
+(8, NULL, 'Wartortle', 22.5, 1, 'Água', 83),
+(9, NULL, 'Blastoise', 85.5, 1.6, 'Água', 88),
+(10, NULL, 'Caterpie', 2.9, 0.3, 'Inseto', 68),
+(11, NULL, 'Metapod', 9.9, 0.7, 'Inseto', 50),
+(12, NULL, 'Butterfree', 32, 1.1, 'Inseto / Voador', 84),
+(13, NULL, 'Weedle', 3.2, 0.3, 'Inseto / Veneno', 65),
+(14, NULL, 'Kakuna', 10, 0.6, 'Inseto / Veneno', 50),
+(15, NULL, 'Beedrill', 29.5, 1, 'Inseto / Veneno', 84),
+(16, NULL, 'Pidgey', 1.8, 0.3, 'Normal / Voador', 70),
+(17, NULL, 'Pidgeotto', 30, 1.1, 'Normal / Voador', 80),
+(18, NULL, 'Pidgeot', 39.5, 1.5, 'Normal / Voador', 87),
+(19, NULL, 'Rattata', 3.5, 0.3, 'Normal', 76),
+(20, NULL, 'Raticate', 18.5, 0.7, 'Normal', 84),
+(21, NULL, 'Spearow', 2, 0.3, 'Normal / Voador', 73),
+(22, NULL, 'Fearow', 38, 1.2, 'Normal / Voador', 85),
+(23, NULL, 'Ekans', 6.9, 2, 'Veneno', 77),
+(24, NULL, 'Arbok', 65, 3.5, 'Veneno', 84),
+(25, NULL, 'Pikachu', 6, 0.4, 'Elétrico', 80),
+(26, NULL, 'Raichu', 30, 0.8, 'Elétrico', 86),
+(27, NULL, 'Sandshrew', 12, 0.6, 'Terra', 76),
+(28, NULL, 'Sandslash', 29.5, 1, 'Terra', 84),
+(29, NULL, 'Nidoran♀', 7, 0.4, 'Veneno', 79),
+(30, NULL, 'Nidorina', 20, 0.8, 'Veneno', 82),
+(31, NULL, 'Nidoqueen', 60, 1.3, 'Veneno / Terra', 85),
+(32, NULL, 'Nidoran♂', 9, 0.5, 'Veneno', 78),
+(33, NULL, 'Nidorino', 19.5, 0.9, 'Veneno', 77),
+(34, NULL, 'Nidoking', 62, 1.4, 'Veneno / Terra', 84),
+(35, NULL, 'Clefairy', 7.5, 0.6, 'Fada', 78),
+(36, NULL, 'Clefable', 40, 1.3, 'Fada', 83),
+(37, NULL, 'Vulpix', 9.9, 0.6, 'Fogo', 76),
+(38, NULL, 'Ninetales', 19.9, 1.1, 'Fogo', 84),
+(39, NULL, 'Jigglypuff', 5.5, 0.5, 'Normal / Fada', 80),
+(40, NULL, 'Wigglytuff', 12, 1, 'Normal / Fada', 82),
+(41, NULL, 'Zubat', 7.5, 0.8, 'Veneno / Voador', 74),
+(42, NULL, 'Golbat', 55, 1.6, 'Veneno / Voador', 83),
+(43, NULL, 'Oddish', 5.4, 0.5, 'Grama / Veneno', 73),
+(44, NULL, 'Gloom', 8.6, 0.8, 'Grama / Veneno', 83),
+(45, NULL, 'Vileplume', 18.6, 1.2, 'Grama / Veneno', 86),
+(46, NULL, 'Paras', 5.4, 0.3, 'Inseto / Grama', 77),
+(47, NULL, 'Parasect', 29.5, 1, 'Inseto / Grama', 83),
+(48, NULL, 'Venonat', 30, 1, 'Inseto / Veneno', 78),
+(49, NULL, 'Venomoth', 12.5, 1.5, 'Inseto / Veneno', 82),
+(50, NULL, 'Diglett', 0.8, 0.2, 'Terra', 76),
+(51, NULL, 'Dugtrio', 33.3, 0.7, 'Terra', 82),
+(52, NULL, 'Meowth', 4.2, 0.4, 'Normal', 81),
+(53, NULL, 'Persian', 32, 1, 'Normal', 82),
+(54, NULL, 'Psyduck', 19.6, 0.8, 'Água', 79),
+(55, NULL, 'Golduck', 76.6, 1.7, 'Água', 84),
+(56, NULL, 'Mankey', 28, 0.5, 'Lutador', 76),
+(57, NULL, 'Primeape', 32, 1, 'Lutador', 82),
+(58, NULL, 'Growlithe', 19, 0.7, 'Fogo', 77),
+(59, NULL, 'Arcanine', 155, 1.9, 'Fogo', 85),
+(60, NULL, 'Poliwag', 12.4, 0.6, 'Água', 76),
+(61, NULL, 'Poliwhirl', 20, 1, 'Água', 80),
+(62, NULL, 'Poliwrath', 54, 1.3, 'Água / Lutador', 85),
+(63, NULL, 'Abra', 19.5, 0.9, 'Psíquico', 79),
+(64, NULL, 'Kadabra', 56.5, 1.3, 'Psíquico', 84),
+(65, NULL, 'Alakazam', 48, 1.5, 'Psíquico', 88),
+(66, NULL, 'Machop', 19.5, 0.8, 'Lutador', 76),
+(67, NULL, 'Machoke', 70.5, 1.5, 'Lutador', 81),
+(68, NULL, 'Machamp', 130, 1.6, 'Lutador', 87),
+(69, NULL, 'Bellsprout', 4, 0.7, 'Grama / Veneno', 74),
+(70, NULL, 'Weepinbell', 6.4, 1, 'Grama / Veneno', 79),
+(71, NULL, 'Victreebel', 15.5, 1.7, 'Grama / Veneno', 84),
+(72, NULL, 'Tentacool', 45.5, 0.9, 'Água / Veneno', 78),
+(73, NULL, 'Tentacruel', 55, 1.6, 'Água / Veneno', 83),
+(74, NULL, 'Geodude', 20, 0.4, 'Pedra / Terra', 75),
+(75, NULL, 'Graveler', 105, 1, 'Pedra / Terra', 79),
+(76, NULL, 'Golem', 300, 1.4, 'Pedra / Terra', 85),
+(77, NULL, 'Ponyta', 30, 1, 'Fogo', 77),
+(78, NULL, 'Rapidash', 95, 1.7, 'Fogo', 83),
+(79, NULL, 'Slowpoke', 36, 1.2, 'Água / Psíquico', 78),
+(80, NULL, 'Slowbro', 78.5, 1.6, 'Água / Psíquico', 83),
+(81, NULL, 'Magnemite', 6, 0.3, 'Elétrico / Aço', 77),
+(82, NULL, 'Magneton', 60, 1, 'Elétrico / Aço', 83),
+(83, NULL, 'Farfetch\'d', 15, 0.8, 'Normal / Voador', 80),
+(84, NULL, 'Doduo', 39.2, 1.4, 'Normal / Voador', 72),
+(85, NULL, 'Dodrio', 85.2, 1.8, 'Normal / Voador', 82),
+(86, NULL, 'Seel', 90, 1.1, 'Água', 75),
+(87, NULL, 'Dewgong', 120, 1.7, 'Água / Gelo', 83),
+(88, NULL, 'Grimer', 30, 0.9, 'Veneno', 78),
+(89, NULL, 'Muk', 30, 1.2, 'Veneno', 84),
+(90, NULL, 'Shellder', 4, 0.3, 'Água', 76),
+(91, NULL, 'Cloyster', 132.5, 1.5, 'Água / Gelo', 82),
+(92, NULL, 'Gastly', 0.1, 1.3, 'Fantasma / Veneno', 76),
+(93, NULL, 'Haunter', 0.1, 1.6, 'Fantasma / Veneno', 81),
+(94, NULL, 'Gengar', 40.5, 1.5, 'Fantasma / Veneno', 87),
+(95, NULL, 'Onix', 210, 8.8, 'Pedra / Terra', 84),
+(96, NULL, 'Drowzee', 32.4, 1, 'Psíquico', 75),
+(97, NULL, 'Hypno', 75.6, 1.6, 'Psíquico', 81),
+(98, NULL, 'Krabby', 6.5, 0.4, 'Água', 76),
+(99, NULL, 'Kingler', 60, 1.3, 'Água', 81),
+(100, NULL, 'Voltorb', 10.4, 0.5, 'Elétrico', 77),
+(101, NULL, 'Electrode', 66.6, 1.2, 'Elétrico', 83),
+(102, NULL, 'Exeggcute', 2.5, 0.4, 'Grama / Psíquico', 77),
+(103, NULL, 'Exeggutor', 120, 2, 'Grama / Psíquico', 84),
+(104, NULL, 'Cubone', 6.5, 0.4, 'Terra', 78),
+(105, NULL, 'Marowak', 45, 1, 'Terra', 83),
+(106, NULL, 'Hitmonlee', 49.8, 1.5, 'Lutador', 75),
+(107, NULL, 'Hitmonchan', 50.2, 1.4, 'Lutador', 83),
+(108, NULL, 'Lickitung', 65.5, 1.2, 'Normal', 83),
+(109, NULL, 'Koffing', 1, 0.6, 'Veneno', 78),
+(110, NULL, 'Weezing', 9.5, 1.2, 'Veneno', 82),
+(111, NULL, 'Rhyhorn', 115, 1, 'Terra / Pedra', 79),
+(112, NULL, 'Rhydon', 120, 1.9, 'Terra / Pedra', 85),
+(113, NULL, 'Chansey', 34.6, 1.1, 'Normal', 81),
+(114, NULL, 'Tangela', 35, 1, 'Grama', 77),
+(115, NULL, 'Kangaskhan', 80, 2.2, 'Normal', 80),
+(116, NULL, 'Horsea', 8, 0.4, 'Água', 74),
+(117, NULL, 'Seadra', 25, 1.2, 'Água', 82),
+(118, NULL, 'Goldeen', 15, 0.6, 'Água', 76),
+(119, NULL, 'Seaking', 39, 1.3, 'Água', 83),
+(120, NULL, 'Staryu', 34.5, 0.8, 'Água', 77),
+(121, NULL, 'Starmie', 80, 1.1, 'Água / Psíquico', 80),
+(122, NULL, 'Mr. Mime', 54.5, 1.3, 'Psíquico / Fada', 81),
+(123, NULL, 'Scyther', 56, 1.5, 'Inseto / Voador', 81),
+(124, NULL, 'Jynx', 40.6, 1.4, 'Gelo / Psíquico', 80),
+(125, NULL, 'Electabuzz', 30, 1.1, 'Elétrico', 81),
+(126, NULL, 'Magmar', 44.5, 1.3, 'Fogo', 84),
+(127, NULL, 'Pinsir', 55, 1.5, 'Inseto', 80),
+(128, NULL, 'Tauros', 88.4, 1.4, 'Normal', 82),
+(129, NULL, 'Magikarp', 10, 0.9, 'Água', 60),
+(130, NULL, 'Gyarados', 235, 6.5, 'Água / Voador', 89),
+(131, NULL, 'Lapras', 220, 2.5, 'Água / Gelo', 86),
+(132, NULL, 'Ditto', 4, 0.3, 'Normal', 0),
+(133, NULL, 'Eevee', 6.5, 0.3, 'Normal', 75),
+(134, NULL, 'Vaporeon', 29, 1, 'Água', 83),
+(135, NULL, 'Jolteon', 24.5, 0.8, 'Elétrico', 83),
+(136, NULL, 'Flareon', 25, 0.9, 'Fogo', 83),
+(116, NULL, 'Horsea', 8, 0.4, 'Água', 74),
+(137, NULL, 'Porygon', 36.5, 0.8, 'Normal', 80),
+(138, NULL, 'Omanyte', 7.5, 0.4, 'Pedra / Água', 78),
+(139, NULL, 'Omastar', 35, 1, 'Pedra / Água', 82),
+(140, NULL, 'Kabuto', 11.5, 0.5, 'Pedra / Água', 74),
+(141, NULL, 'Kabutops', 40.5, 1.3, 'Pedra / Água', 83),
+(142, NULL, 'Aerodactyl', 59, 1.8, 'Pedra', 84),
+(143, NULL, 'Snorlax', 460, 2.1, 'Normal', 88),
+(144, NULL, 'Articuno', 55.4, 1.7, 'Gelo / Voador', 92),
+(145, NULL, 'Zapdos', 52.6, 1.6, 'Elétrico / Voador', 92),
+(146, NULL, 'Moltres', 60, 2, 'Fogo / Voador', 92),
+(147, NULL, 'Dratini', 3.3, 1.8, 'Dragão', 82),
+(148, NULL, 'Dragonair', 16.5, 4, 'Dragão', 87),
+(149, NULL, 'Dragonite', 210, 2.2, 'Dragão / Voador', 93),
+(150, NULL, 'Mewtwo', 122, 2, 'Psíquico', 98),
+(151, NULL, 'Mew', 4, 0.4, 'Psíquico', 90);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
-
