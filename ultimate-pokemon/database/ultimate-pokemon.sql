@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19-Mar-2023 às 19:26
+-- Tempo de geração: 19-Mar-2023 às 23:57
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.1.12
 
@@ -28,10 +28,22 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `player` (
-  `idPlayer` tinyint(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `idPlayer` tinyint(4) NOT NULL,
   `email` varchar(100) NOT NULL,
   `nickname` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `player_wallet`
+--
+
+CREATE TABLE `player_wallet` (
+  `idPlayer` tinyint(4) NOT NULL,
+  `idPokemon` smallint(6) NOT NULL,
+  `idTransacao` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -219,6 +231,12 @@ ALTER TABLE `player`
   ADD PRIMARY KEY (`idPlayer`);
 
 --
+-- Índices para tabela `player_wallet`
+--
+ALTER TABLE `player_wallet`
+  ADD PRIMARY KEY (`idTransacao`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -226,7 +244,13 @@ ALTER TABLE `player`
 -- AUTO_INCREMENT de tabela `player`
 --
 ALTER TABLE `player`
-  MODIFY `idPlayer` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idPlayer` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `player_wallet`
+--
+ALTER TABLE `player_wallet`
+  MODIFY `idTransacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
