@@ -5,37 +5,41 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+html {
+	height: 100%;
+    width: 100%;
+}
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 	font-family: 'Pokemon Solid', sans-serif;
     height: 100vh;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    min-height: 100vh;
-    background-image: url('../../assets/pika.jpg');
-    background-size: cover;
-    background-position: bottom center;
 }
 
-.form {
+.login-util {
+	background-image: url('../../assets/pika.jpg');
+	background-size: cover;
+	background-position: bottom center;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.login {
 	background-color: rgba(255, 255, 255, 0.8);
 	padding: 20px;
 	border-radius: 10px;
-	width: 400px;
+	max-width: 400px;
 	box-shadow: 0 0 20px var(--primary-text-color);
 	transition: all ease .3s;
 }
 @media (max-width: 475px) {
-	.form {
-		width: var(--screen-mobileS);
+	.login {
+		max-width: var(--screen-mobileS);
 	}
 }
 
 .titulo {
+	
     font-size: 39px;
     text-align: center;
     color: var(--primary-color);
@@ -45,7 +49,6 @@ body {
 form {
 	display: flex;
 	flex-direction: column;
-    
 }
 
 label {
@@ -84,4 +87,5 @@ input {
 
 .botao:hover {
 	opacity: .5;
+	/* color: var(--seconadry-text-color); */
 }

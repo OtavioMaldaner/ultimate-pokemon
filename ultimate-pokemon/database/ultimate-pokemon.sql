@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18-Mar-2023 às 18:07
+-- Tempo de geração: 19-Mar-2023 às 19:26
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.1.12
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `player` (
-  `idPlayer` tinyint(4) NOT NULL,
+  `idPlayer` tinyint(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `email` varchar(100) NOT NULL,
   `nickname` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL
@@ -207,6 +207,26 @@ INSERT INTO `pokemon` (`idPokemon`, `idPlayer`, `nome`, `peso`, `altura`, `tipo`
 (149, NULL, 'Dragonite', 210, 2.2, 'Dragão / Voador', 93),
 (150, NULL, 'Mewtwo', 122, 2, 'Psíquico', 98),
 (151, NULL, 'Mew', 4, 0.4, 'Psíquico', 90);
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `player`
+--
+ALTER TABLE `player`
+  ADD PRIMARY KEY (`idPlayer`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `player`
+--
+ALTER TABLE `player`
+  MODIFY `idPlayer` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

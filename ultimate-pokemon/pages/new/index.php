@@ -30,8 +30,8 @@ if (isset($_POST["button"])) {
 </head>
 <body>
     <section class="form">
+        <h1 class="titulo">Criar Conta</h1>
         <form action="index.php" method="post" enctype="multipart/form-data">
-            <h1 class="title-in-box">Criar Conta</h1>
 
             <label for="fullname">Nickname</label>
             <input type="text" name="nickName" id="nickName" required>
@@ -42,7 +42,7 @@ if (isset($_POST["button"])) {
             <label for="password">Password</label>
             <input type="password" name="password" id="password" required>
 
-            <input type="submit" value="Create" name="button">
+            <input type="submit" value="Create" name="button" class="botao">
         </form>
     </section>
 </body>

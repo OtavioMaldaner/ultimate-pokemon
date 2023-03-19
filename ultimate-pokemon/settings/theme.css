@@ -6,10 +6,9 @@ font-family: 'Poppins';
 }
 :root {
     /* Colors */
-    --primary-color: #f89132;
-    --secondary-color: #132a34;
-    --primary-text-color: #090909;
-    --seconadry-text-color: #e7e7e7;
+    --primary-color: #f5a623;
+    --primary-text-color: #000000;
+    --seconadry-text-color: #ffffff;
 
     /* Fonts */
     --main-font: 'Poppins';
