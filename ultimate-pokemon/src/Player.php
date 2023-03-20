@@ -67,10 +67,6 @@ public function setNickName(string $nickName): void {
 public function save(): bool 
     {
         $connection = new MySQL();
-        $directory = __DIR__ . "/../database/users/";
-        $extension = "";
-
-        
         
         if (isset($this->idPlayer)) {
           $sql = "UPDATE player SET email = '{$this->email}', nickName = '{$this->nickname}',  WHERE idPlayer = {$this->idPlayer}";
@@ -78,7 +74,7 @@ public function save(): bool
 
         else {
             $this->senha = password_hash($this->senha,PASSWORD_BCRYPT);
-            $sql = "INSERT INTO user (email,senha,nickName) VALUES ('{$this->email}','{$this->senha}','{$this->nickname}')";
+            $sql = "INSERT INTO player (email,senha,nickName) VALUES ('{$this->email}','{$this->senha}','{$this->nickname}')";
         }
         
         return $connection->execute($sql);
@@ -148,7 +144,7 @@ public function save(): bool
     public static function refreshSession(): void
     {
         $connection = new MySQL();
-        $sql = "SELECT idPlayer, email, nickName FROM user WHERE idPlayer = {$_SESSION['idPlayer']}";
+        $sql = "SELECT idPlayer, email, nickName FROM player WHERE idPlayer = {$_SESSION['idPlayer']}";
         $res = $connection->query($sql);
 
         $_SESSION['idPlayer'] = $res[0]['idPlayer'];

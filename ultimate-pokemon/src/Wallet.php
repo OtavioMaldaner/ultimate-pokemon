@@ -1,17 +1,16 @@
 <?php
 class Wallet implements ActiveRecord {
-    private int $idPlayer;
-    private int $idPokemon;
+    
     private int $idTransacao;
 
-    public function __construct() {
+    public function __construct(private int $idPlayer, private int $idPokemon) {
         
     }
 
-    public function constructorCreate(int $idPlayer, int $idPokemon): void {
-        $this->setIdPlayer($idPlayer);
-        $this->setIdPokemon($idPokemon);
-    }
+    // public function constructorCreate(int $idPlayer, int $idPokemon): void {
+    //     $this->setIdPlayer($idPlayer);
+    //     $this->setIdPokemon($idPokemon);
+    // }
 
     public function setIdPlayer(int $idPlayer): void {
         $this->idPlayer = $idPlayer;
@@ -63,11 +62,7 @@ class Wallet implements ActiveRecord {
         $connection = new MySQL();
         $sql = "SELECT * FROM player_wallet WHERE idTransacao = {$idTransacao}";
         $result = $connection->query($sql);
-        $w = new Wallet();
-        $w->constructorCreate(
-          $result[0]['idPlayer'],
-          $result[0]['idPokemon']
-        );
+        $w = new Wallet($result[0]['idPlayer'], $result[0]['idPokemon']);
         $w->setIdTransacao($result[0]['idTransacao']);
       
         return $w;
@@ -80,11 +75,7 @@ class Wallet implements ActiveRecord {
       
       $wallets = array();
       foreach($results as $result){
-        $w = new Wallet();
-        $w->constructorCreate(
-          $result[0]['idPlayer'],
-          $result[0]['idPokemon']
-        );
+        $w = new Wallet($result[0]['idPlayer'], $result[0]['idPokemon']);
         $w->setIdTransacao($result[0]['idTransacao']);
 
         $wallets[] = $w;
@@ -93,21 +84,17 @@ class Wallet implements ActiveRecord {
       return $wallets;
     }
 
-    public static function getPlayerWallet(): array {
+    public static function getPlayerWallet($idPlayer): array {
         $connection = new MySQL();
-        $sql = "SELECT * FROM wallet";
+        $sql = "SELECT * FROM wallet WHERE idPlayer = {$idPlayer}";
         $results = $connection->query($sql);
       
         $wallets = array();
         foreach($results as $result){
-            $w = new Wallet();
-            $w->constructorCreate(
-            $result[0]['idPlayer'],
-            $result[0]['idPokemon']
-        );
-        $w->setIdTransacao($result[0]['idTransacao']);
+            $w = new Wallet($result[0]['idPlayer'], $result[0]['idPokemon']);
+            $w->setIdTransacao($result[0]['idTransacao']);
 
-        $wallets[] = $w;
+            $wallets[] = $w;
       }
       
       return $wallets;

@@ -10,7 +10,7 @@ if (!isset($_SESSION["idPlayer"])) {
 
 Player::refreshSession();
 
-$directory = "../../database/users/";
+$pokemons = Wallet::getPlayerWallet($_SESSION['idPlayer']);
 
 ?>
 <!DOCTYPE html>
@@ -23,12 +23,29 @@ $directory = "../../database/users/";
     <link rel="shortcut icon" href="../../assets/images/olifx_logo.png" type="image/png">
     <link rel="stylesheet" href="style.css">
     <title>Ultimate Pokémon | Homepage</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 </head>
 
 <body>
     <div class="container">
-        
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <?php
+                    if (count($pokemons) > 0) {
+                        foreach ($pokemons as $pokemon) {
+                            $id = $pokemon->getIdPokemon();
+                            echo "<div class=\"swiper-slide\">";
+                            echo "<h2 class=\"pokemon-type\">".$pokemon->getTipo()."</h2>";
+                            echo "<h1 class=\"pokemon-name\">".$pokemon->getNome()."</h1>";
+                            echo "</div>";
+                        }
+                    }
+                ?>
+            </div>
+        </div>
     </div>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 </html>
