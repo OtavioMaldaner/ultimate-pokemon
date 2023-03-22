@@ -41,12 +41,13 @@ $pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
                             foreach ($pokemons_carteira as $pokemons) {
                                 $id = $pokemons->getIdPokemon();
                                 $pokemon = Pokemon::find($id);
+                                $img = Media::findMediaByPokemon($id);
 
                                 echo "<div class=\"item current-item\">";
                                 echo "<h2 class=\"pokemon-type\">" . $pokemon->getTipo() . "</h2>";
                                 echo "<h1 class=\"pokemon-name\">" . $pokemon->getNome() . "</h1>";
                                 echo "<h3 class=\"pokemon-owner\">" . $_SESSION['nickName'] . "</h3>";
-                                // echo "<img src=\"../../assets/suarez.jpg\" alt=\"\" class=\"pokemon-image\">";
+                                echo "<img src=\"../../database/media/{$img->getPath()}\" alt=\"Default icon\">";
                                 echo "<div class=\"additional-infos\">" . "<span class=\"pokemon-over\">" . $pokemon->getOver() . "</span>" . "<span class=\"pokemon-height\">" . $pokemon->getAltura() . "</span>" . "<span class=\"pokemon-weight\">" . $pokemon->getPeso() . "</span>" . "</div>";
                                 echo "</div>";
                             }
