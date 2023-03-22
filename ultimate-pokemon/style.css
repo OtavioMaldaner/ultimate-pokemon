@@ -41,7 +41,6 @@ body {
 }
 
 .homepage-container {
-    background-image: url('../../assets/pikachu.png');
 	background-size: cover;
 	background-position: bottom center;
 	height: 100vh;

@@ -6,8 +6,23 @@
     box-sizing: border-box;
 }
 :root {
-    --bg-color-1: #153843;
+    --bg-color-1: #9900ff;
     --bg-color-2: #141923;
+    --primary-color: #f9dc5c;
+    --primary-text-color: #ff9500;
+    --secondary-text-color: #141923;
+    --seconadry-text-color: #fff;
+    --main-font: 'Pokemon Solid', sans-serif;
+    --font-p: 16px;
+    --font-m: 20px;
+    --font-g: 32px;
+    --font-gg: 40px;
+    --screen-mobileS: 320px;
+    --screen-mobileM: 375px;
+    --screen-mobileL: 425px;
+    --screen-tablet: 768px;
+    --screen-laptop: 1024px;
+    --screen-desktop: 1440px;
 }
 body, html {
     min-height: 100vh;
@@ -21,5 +36,6 @@ p, input, label, h1, h2, h3, span, a {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(35deg, black, white, lightblue);
+    background: linear-gradient(135deg, var(--bg-color-1), var(--bg-color-2));
+    background-repeat: no-repeat;
 }
