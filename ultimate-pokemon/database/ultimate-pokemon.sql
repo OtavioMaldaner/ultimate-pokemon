@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22-Mar-2023 às 11:43
+-- Tempo de geração: 22-Mar-2023 às 12:14
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.1.12
 
@@ -34,6 +34,13 @@ CREATE TABLE `player` (
   `senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `player`
+--
+
+INSERT INTO `player` (`idPlayer`, `email`, `nickname`, `senha`) VALUES
+(2, 'otaviomaldaner571@gmail.com', 'Otavio_Maldaner', '$2y$10$/WSgLmRE1hB8r.Bre9x4.uZhrnoP0tlmKrlpo.9LMQVbbp6dpE77O');
+
 -- --------------------------------------------------------
 
 --
@@ -45,6 +52,15 @@ CREATE TABLE `player_wallet` (
   `idPokemon` smallint(6) NOT NULL,
   `idTransacao` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `player_wallet`
+--
+
+INSERT INTO `player_wallet` (`idPlayer`, `idPokemon`, `idTransacao`) VALUES
+(2, 150, 4),
+(2, 145, 5),
+(2, 130, 6);
 
 -- --------------------------------------------------------
 
@@ -232,7 +248,14 @@ ALTER TABLE `player`
 -- Índices para tabela `player_wallet`
 --
 ALTER TABLE `player_wallet`
-  ADD PRIMARY KEY (`idTransacao`);
+  ADD PRIMARY KEY (`idTransacao`),
+  ADD KEY `fk_pokemon` (`idPokemon`);
+
+--
+-- Índices para tabela `pokemon`
+--
+ALTER TABLE `pokemon`
+  ADD PRIMARY KEY (`idPokemon`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -242,13 +265,23 @@ ALTER TABLE `player_wallet`
 -- AUTO_INCREMENT de tabela `player`
 --
 ALTER TABLE `player`
-  MODIFY `idPlayer` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idPlayer` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `player_wallet`
 --
 ALTER TABLE `player_wallet`
-  MODIFY `idTransacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idTransacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `player_wallet`
+--
+ALTER TABLE `player_wallet`
+  ADD CONSTRAINT `fk_pokemon` FOREIGN KEY (`idPokemon`) REFERENCES `pokemon` (`idPokemon`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
