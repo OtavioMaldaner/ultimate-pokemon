@@ -86,7 +86,7 @@ class Wallet implements ActiveRecord {
 
     public static function getPlayerWallet($idPlayer): array {
         $connection = new MySQL();
-        $sql = "SELECT * FROM wallet WHERE idPlayer = {$idPlayer}";
+        $sql = "SELECT * FROM player_wallet WHERE idPlayer = {$idPlayer}";
         $results = $connection->query($sql);
       
         $wallets = array();
