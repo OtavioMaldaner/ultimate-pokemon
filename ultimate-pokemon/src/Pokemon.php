@@ -63,7 +63,7 @@ public function getAltura(): float {
   return $this->altura;
 }
 
-public function setTipo(int $tipo): void {
+public function setTipo(string $tipo): void {
   $this->tipo = $tipo;
 }
 
@@ -123,7 +123,6 @@ public function save(): bool
           $result[0]['tipo'],
           $result[0]['over']
         );
-        $p->setIdPlayer($result[0]['idPlayer']);
         $p->setIdPokemon($result[0]['idPokemon']);
       
         return $p;

@@ -91,8 +91,8 @@ class Wallet implements ActiveRecord {
       
         $wallets = array();
         foreach($results as $result){
-            $w = new Wallet($result[0]['idPlayer'], $result[0]['idPokemon']);
-            $w->setIdTransacao($result[0]['idTransacao']);
+            $w = new Wallet($result['idPlayer'], $result['idPokemon']);
+            $w->setIdTransacao($result['idTransacao']);
 
             $wallets[] = $w;
       }

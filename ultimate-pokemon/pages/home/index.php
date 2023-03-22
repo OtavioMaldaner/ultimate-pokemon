@@ -10,7 +10,7 @@ if (!isset($_SESSION["idPlayer"])) {
 
 Player::refreshSession();
 
-$pokemons = Wallet::getPlayerWallet($_SESSION['idPlayer']);
+$pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
 
 ?>
 <!DOCTYPE html>
@@ -31,9 +31,11 @@ $pokemons = Wallet::getPlayerWallet($_SESSION['idPlayer']);
         <div class="swiper">
             <div class="swiper-wrapper">
                 <?php
-                    if (count($pokemons) > 0) {
-                        foreach ($pokemons as $pokemon) {
-                            $id = $pokemon->getIdPokemon();
+                    if (count($pokemons_carteira) > 0) {
+                        foreach ($pokemons_carteira as $pokemons) {
+                            $id = $pokemons->getIdPokemon();
+                            $pokemon = Pokemon::find($id);
+
                             echo "<div class=\"swiper-slide\">";
                             echo "<h2 class=\"pokemon-type\">".$pokemon->getTipo()."</h2>";
                             echo "<h1 class=\"pokemon-name\">".$pokemon->getNome()."</h1>";

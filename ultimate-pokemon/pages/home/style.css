@@ -38,4 +38,5 @@ p, input, label, h1, h2, h3, span, a {
     height: 100vh;
     background: linear-gradient(135deg, var(--bg-color-1), var(--bg-color-2));
     background-repeat: no-repeat;
+    color: var(--seconadry-text-color);
 }
