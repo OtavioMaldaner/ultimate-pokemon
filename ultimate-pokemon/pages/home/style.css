@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
 @import '../../settings/theme.css';
 @import '../../settings/global.css';
 
@@ -15,10 +17,12 @@
     --secondary-text-color: #141923;
     --seconadry-text-color: #fff;
     --main-font: 'Pokemon Solid', sans-serif;
+    --second-font: 'Delicious Handrawn', cursive;
     --font-p: 16px;
     --font-m: 20px;
     --font-g: 32px;
     --font-gg: 40px;
+    --font-ggg: 50px;
     --screen-mobileS: 320px;
     --screen-mobileM: 375px;
     --screen-mobileL: 425px;
@@ -184,4 +188,19 @@ a {
     .mobile-arrows:active {
         color: transparent;
     }
+}
+
+.swiper-slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon-type{
+    font-size: var(--font-g);
+    font-family: var(--second-font), cursive;
+}
+
+.pokemon-name{
+    font-size: var(--font-ggg);
 }
