@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22-Mar-2023 às 12:14
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.1.12
+-- Tempo de geração: 22-Mar-2023 às 19:34
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,6 +24,175 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `media`
+--
+
+CREATE TABLE `media` (
+  `idMedia` int(11) NOT NULL,
+  `idPokemon` int(11) NOT NULL,
+  `path` varchar(70) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `media`
+--
+
+INSERT INTO `media` (`idMedia`, `idPokemon`, `path`) VALUES
+(1, 1, 'bulbasaur.png'),
+(2, 2, 'ivysaur.png'),
+(3, 3, 'venusaur.png'),
+(4, 4, 'charmander.png'),
+(5, 5, 'charmeleon.png'),
+(6, 6, 'charizard.png'),
+(7, 7, 'squirtle.png'),
+(8, 8, 'wartortle.png'),
+(9, 9, 'blastoise.png'),
+(10, 10, 'caterpie.png'),
+(11, 11, 'metapod.png'),
+(12, 12, 'butterfree.png'),
+(13, 13, 'weedle.png'),
+(14, 14, 'kakuna.png'),
+(15, 15, 'beedrill.png'),
+(16, 16, 'pidgey.png'),
+(17, 17, 'pidgeotto.png'),
+(18, 18, 'pidgeot.png'),
+(19, 19, 'rattata.png'),
+(20, 20, 'raticate.png'),
+(21, 21, 'spearow.png'),
+(22, 22, 'fearow.png'),
+(23, 23, 'ekans.png'),
+(24, 24, 'arbok.png'),
+(25, 25, 'pikachu.png'),
+(26, 26, 'raichu.png'),
+(27, 27, 'sandshrew.png'),
+(28, 28, 'sandslash.png'),
+(29, 29, 'nidoran-f.png'),
+(30, 30, 'nidorina.png'),
+(31, 31, 'nidoqueen.png'),
+(32, 32, 'nidoran-m.png'),
+(33, 33, 'nidorino.png'),
+(34, 34, 'nidoking.png'),
+(35, 35, 'clefairy.png'),
+(36, 36, 'clefable.png'),
+(37, 37, 'vulpix.png'),
+(38, 38, 'ninetales.png'),
+(39, 39, 'jigglypuff.png'),
+(40, 40, 'wigglytuff.png'),
+(41, 41, 'zubat.png'),
+(42, 42, 'golbat.png'),
+(43, 43, 'oddish.png'),
+(44, 44, 'gloom.png'),
+(45, 45, 'vileplume.png'),
+(46, 46, 'paras.png'),
+(47, 47, 'parasect.png'),
+(48, 48, 'venonat.png'),
+(49, 49, 'venomoth.png'),
+(50, 50, 'diglett.png'),
+(51, 51, 'dugtrio.png'),
+(52, 52, 'meowth.png'),
+(53, 53, 'persian.png'),
+(54, 54, 'psyduck.png'),
+(55, 55, 'golduck.png'),
+(56, 56, 'mankey.png'),
+(57, 57, 'primeape.png'),
+(58, 58, 'growlithe.png'),
+(59, 59, 'arcanine.png'),
+(60, 60, 'poliwag.png'),
+(61, 61, 'poliwhirl.png'),
+(62, 62, 'poliwrath.png'),
+(63, 63, 'abra.png'),
+(64, 64, 'kadabra.png'),
+(65, 65, 'alakazam.png'),
+(66, 66, 'machop.png'),
+(67, 67, 'machoke.png'),
+(68, 68, 'machamp.png'),
+(69, 69, 'bellsprout.png'),
+(70, 70, 'weepinbell.png'),
+(71, 71, 'victreebel.png'),
+(72, 72, 'tentacool.png'),
+(73, 73, 'tentacruel.png'),
+(74, 74, 'geodude.png'),
+(75, 75, 'graveler.png'),
+(76, 76, 'golem.png'),
+(77, 77, 'ponyta.png'),
+(78, 78, 'rapidash.png'),
+(79, 79, 'slowpoke.png'),
+(80, 80, 'slowbro.png'),
+(81, 81, 'magnemite.png'),
+(82, 82, 'magneton.png'),
+(83, 83, 'farfetchd.png'),
+(84, 84, 'doduo.png'),
+(85, 85, 'dodrio.png'),
+(86, 86, 'seel.png'),
+(87, 87, 'dewgong.png'),
+(88, 88, 'grimer.png'),
+(89, 89, 'muk.png'),
+(90, 90, 'shellder.png'),
+(91, 91, 'cloyster.png'),
+(92, 92, 'gastly.png'),
+(93, 93, 'haunter.png'),
+(94, 94, 'gengar.png'),
+(95, 95, 'onix.png'),
+(96, 96, 'drowzee.png'),
+(97, 97, 'hypno.png'),
+(98, 98, 'krabby.png'),
+(99, 99, 'kingler.png'),
+(100, 100, 'voltorb.png'),
+(101, 101, 'electrode.png'),
+(102, 102, 'exeggcute.png'),
+(103, 103, 'exeggutor.png'),
+(104, 104, 'cubone.png'),
+(105, 105, 'marowak.png'),
+(106, 106, 'hitmonlee.png'),
+(107, 107, 'hitmonchan.png'),
+(108, 108, 'lickitung.png'),
+(109, 109, 'koffing.png'),
+(110, 110, 'weezing.png'),
+(111, 111, 'rhyhorn.png'),
+(112, 112, 'rhydon.png'),
+(113, 113, 'chansey.png'),
+(114, 114, 'tangela.png'),
+(115, 115, 'kangaskhan.png'),
+(116, 116, 'horsea.png'),
+(117, 117, 'seadra.png'),
+(118, 118, 'goldeen.png'),
+(119, 119, 'seaking.png'),
+(120, 120, 'staryu.png'),
+(121, 121, 'starmie.png'),
+(122, 122, 'mr_mime.png'),
+(123, 123, 'scyther.png'),
+(124, 124, 'jynx.png'),
+(125, 125, 'electabuzz.png'),
+(126, 126, 'magmar.png'),
+(127, 127, 'pinsir.png'),
+(128, 128, 'tauros.png'),
+(129, 129, 'magikarp.png'),
+(130, 130, 'gyarados.png'),
+(131, 131, 'lapras.png'),
+(132, 132, 'ditto.png'),
+(133, 133, 'eevee.png'),
+(134, 134, 'vaporeon.png'),
+(135, 135, 'jolteon.png'),
+(136, 136, 'flareon.png'),
+(137, 137, 'porygon.png'),
+(138, 138, 'omanyte.png'),
+(139, 139, 'omastar.png'),
+(140, 140, 'kabuto.png'),
+(141, 141, 'kabutops.png'),
+(142, 142, 'aerodactyl.png'),
+(143, 143, 'snorlax.png'),
+(144, 144, 'articuno.png'),
+(145, 145, 'zapdos.png'),
+(146, 146, 'moltres.png'),
+(147, 147, 'dratini.png'),
+(148, 148, 'dragonair.png'),
+(149, 149, 'dragonite.png'),
+(150, 150, 'mewtwo.png'),
+(151, 151, 'mew.png');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `player`
 --
 
@@ -32,7 +201,7 @@ CREATE TABLE `player` (
   `email` varchar(100) NOT NULL,
   `nickname` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `player`
@@ -51,7 +220,7 @@ CREATE TABLE `player_wallet` (
   `idPlayer` tinyint(4) NOT NULL,
   `idPokemon` smallint(6) NOT NULL,
   `idTransacao` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `player_wallet`
@@ -75,7 +244,7 @@ CREATE TABLE `pokemon` (
   `altura` float NOT NULL,
   `tipo` varchar(255) NOT NULL,
   `over` tinyint(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `pokemon`
@@ -237,6 +406,12 @@ INSERT INTO `pokemon` (`idPokemon`, `nome`, `peso`, `altura`, `tipo`, `over`) VA
 --
 -- Índices para tabelas despejadas
 --
+
+--
+-- Índices para tabela `media`
+--
+ALTER TABLE `media`
+  ADD PRIMARY KEY (`idMedia`);
 
 --
 -- Índices para tabela `player`

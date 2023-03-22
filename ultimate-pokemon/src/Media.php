@@ -108,6 +108,7 @@ class Media implements ActiveRecord
         $media->setPath($res[0]['path']);
 
         return $media;
+        
     }
 }
 
