@@ -80,14 +80,18 @@ a {
     box-sizing: border-box;
     border-radius: 10px;
 }
-.gallery-wrapper .gallery  .item{
+.gallery-wrapper .gallery .item{
     display: none;
+    text-align: center;
 }
 .gallery-wrapper .gallery .current-item{
     /* display: unset; */
     width: 70vw;
     max-width: 800px;
     z-index: 1;
+}
+.gallery img {
+    height: 100px;
 }
 @media (min-width: 712px) {
     .gallery-wrapper .gallery .current-item{
@@ -203,4 +207,15 @@ a {
 
 .pokemon-name{
     font-size: var(--font-ggg);
+}
+.additional-infos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.stat-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

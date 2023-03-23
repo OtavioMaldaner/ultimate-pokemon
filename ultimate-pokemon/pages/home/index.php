@@ -32,28 +32,26 @@ $pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
             <button class="arrow-left control" aria-label="Previous image">
                 <img src="../imagens/left_arrow.svg" alt="">
             </button>
-            <div class="carousel-monitor">
-                <img class="monitor-support" src="../imagens/Monitor 2.svg" alt="">
-                <div class="gallery-wrapper">
-                    <div class="gallery">
-                        <?php
-                        if (count($pokemons_carteira) > 0) {
-                            foreach ($pokemons_carteira as $pokemons) {
-                                $id = $pokemons->getIdPokemon();
-                                $pokemon = Pokemon::find($id);
-                                $img = Media::findMediaByPokemon($id);
+            <div class="gallery-wrapper">
+                <div class="gallery">
+                    <?php
+                    if (count($pokemons_carteira) > 0) {
+                        foreach ($pokemons_carteira as $pokemons) {
+                            $id = $pokemons->getIdPokemon();
+                            $pokemon = Pokemon::find($id);
+                            $img = Media::findMediaByPokemon($id);
 
-                                echo "<div class=\"item current-item\">";
-                                echo "<h2 class=\"pokemon-type\">" . $pokemon->getTipo() . "</h2>";
-                                echo "<h1 class=\"pokemon-name\">" . $pokemon->getNome() . "</h1>";
-                                echo "<h3 class=\"pokemon-owner\">" . $_SESSION['nickName'] . "</h3>";
-                                echo "<img src=\"../../database/media/{$img->getPath()}\" alt=\"Default icon\">";
-                                echo "<div class=\"additional-infos\">" . "<span class=\"pokemon-over\">" . $pokemon->getOver() . "</span>" . "<span class=\"pokemon-height\">" . $pokemon->getAltura() . "</span>" . "<span class=\"pokemon-weight\">" . $pokemon->getPeso() . "</span>" . "</div>";
-                                echo "</div>";
-                            }
+                            echo "<div class=\"item current-item\">";
+                            echo "<h2 class=\"pokemon-type\">" . $pokemon->getTipo() . "</h2>";
+                            echo "<h1 class=\"pokemon-name\">" . $pokemon->getNome() . "</h1>";
+                            echo "<h3 class=\"pokemon-owner\">" . $_SESSION['nickName'] . "</h3>";
+                            echo "<img src=\"../../database/media/{$img->getPath()}\" alt=\"Default icon\">";
+                            echo "<div class=\"additional-infos\">" . "<div class=\"stat-field\"><span>Overall</span><span class=\"pokemon-over\">" . $pokemon->getOver() . "</span></div>" . "<div class=\"stat-field\"><span>Altura</span><span class=\"pokemon-height\">" . $pokemon->getAltura() . "</span></div>" . "<div class=\"stat-field\"><span>Peso</span><span class=\"pokemon-weight\">" . $pokemon->getPeso() . "</span></div>" . "</div>";
+                            echo "</div>";
                         }
-                        ?>
-                    </div>
+                    }
+                    
+                    ?>
                 </div>
             </div>
             <button class="arrow-right control" aria-label="Next image">
