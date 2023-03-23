@@ -31,19 +31,11 @@
     --screen-desktop: 1440px;
 }
 
-body,
-html {
+body, html {
     min-height: 100vh;
 }
 
-p,
-input,
-label,
-h1,
-h2,
-h3,
-span,
-a {
+p, input, label, h1, h2, h3, span, a {
     font-family: var(--main-font), sans-serif;
 }
 
