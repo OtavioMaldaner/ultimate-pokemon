@@ -184,5 +184,36 @@ public function save(): bool
         }
         return "";
     }
+    public function verificaRoleta() : bool{
+        $connection = new MySQL();
+        $sql = "SELECT data, disponivel FROM sorteio WHERE idPlayer = {$this->idPlayer}";
+        $res = $connection->query($sql);
+        $tempo = $res[0]['data'];
+        $disponivel = $res[0]['disponivel'];
+        date_default_timezone_set("America/Sao_Paulo");
+        $today = strtotime(date("Y-m-d H:i:s"));
+        $spin = strtotime($tempo);
+        $diff = $today - $spin;
+        $minutes = round(abs($diff / 60), 0);
+
+        $minutosaguardo = 1440;
+
+        if($minutes >= $minutosaguardo && $disponivel == 0){
+
+            return true;
+        }
+        elseif ($minutes >= $minutosaguardo && $disponivel == 1){
+            $conexao = new MySQL();
+            $sql = "UPDATE sorteio set disponivel = 0 where idPlayer = {$this->idPlayer}";
+            return $conexao->execute($sql);
+        }else{
+            return false;
+        }
+    }
+    public function atualizaRoleta() : bool {
+      $connection = new MySQL();
+      $sql = "UPDATE sorteio SET disponivel = 1, data = now() where idPlayer = {$this->idPlayer}";
+      return $connection->execute($sql);
+    }
 }
 ?>
