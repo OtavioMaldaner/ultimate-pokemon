@@ -1,0 +1,182 @@
+const pokemons = [
+    { nome: "Bulbasaur", imagem: "../../database/media/bulbasaur.png" },
+    { nome: "Ivysaur", imagem: "../../database/media/ivysaur.png" },
+    { nome: "Venusaur", imagem: "../../database/media/venusaur.png" },
+    { nome: "Charmander", imagem: "../../database/media/charmander.png" },
+    { nome: "Charmeleon", imagem: "../../database/media/charmeleon.png" },
+    { nome: "Charizard", imagem: "../../database/media/charizard.png" },
+    { nome: "Squirtle", imagem: "../../database/media/squirtle.png" },
+    { nome: "Wartortle", imagem: "../../database/media/wartortle.png" },
+    { nome: "Blastoise", imagem: "../../database/media/blastoise.png" },
+    { nome: "Caterpie", imagem: "../../database/media/caterpie.png" },
+    { nome: "Metapod", imagem: "../../database/media/metapod.png" },
+    { nome: "Butterfree", imagem: "../../database/media/butterfree.png" },
+    { nome: "Weedle", imagem: "../../database/media/weedle.png" },
+    { nome: "Kakuna", imagem: "../../database/media/kakuna.png" },
+    { nome: "Beedrill", imagem: "../../database/media/beedrill.png" },
+    { nome: "Pidgey", imagem: "../../database/media/pidgey.png" },
+    { nome: "Pidgeotto", imagem: "../../database/media/pidgeotto.png" },
+    { nome: "Pidgeot", imagem: "../../database/media/pidgeot.png" },
+    { nome: "Rattata", imagem: "../../database/media/rattata.png" },
+    { nome: "Raticate", imagem: "../../database/media/raticate.png" },
+    { nome: "Spearow", imagem: "../../database/media/spearow.png" },
+    { nome: "Fearow", imagem: "../../database/media/fearow.png" },
+    { nome: "Ekans", imagem: "../../database/media/ekans.png" },
+    { nome: "Arbok", imagem: "../../database/media/arbok.png" },
+    { nome: "Pikachu", imagem: "../../database/media/pikachu.png" },
+    { nome: "Raichu", imagem: "../../database/media/raichu.png" },
+    { nome: "Sandshrew", imagem: "../../database/media/sandshrew.png" },
+    { nome: "Sandslash", imagem: "../../database/media/sandslash.png" },
+    { nome: "Nidoran♀", imagem: "../../database/media/nidoranf.png" },
+    { nome: "Nidorina", imagem: "../../database/m../../database/media/nidoqueen.png" },
+    { nome: "Nidoran♂", imagem: "../../database/media/nidoranm.png" },
+    { nome: "Nidorino", imagem: "../../database/media/nidorino.png" },
+    { nome: "Nidoking", imagem: "../../database/media/nidoking.png" },
+    { nome: "Clefairy", imagem: "../../database/media/clefairy.png" },
+    { nome: "Clefable", imagem: "../../database/media/clefable.png" },
+    { nome: "Vulpix", imagem: "../../database/media/vulpix.png" },
+    { nome: "Ninetales", imagem: "../../database/media/ninetales.png" },
+    { nome: "Jigglypuff", imagem: "../../database/media/jigglypuff.png" },
+    { nome: "Wigglytuff", imagem: "../../database/media/wigglytuff.png" },
+    { nome: "Zubat", imagem: "../../database/media/zubat.png" },
+    { nome: "Golbat", imagem: "../../database/media/golbat.png" },
+    { nome: "Oddish", imagem: "../../database/media/oddish.png" },
+    { nome: "Gloom", imagem: "../../database/media/gloom.png" },
+    { nome: "Vileplume", imagem: "../../database/media/vileplume.png" },
+    { nome: "Paras", imagem: "../../database/media/paras.png" },
+    { nome: "Parasect", imagem: "../../database/media/parasect.png" },
+    { nome: "Venonat", imagem: "../../database/media/venonat.png" },
+    { nome: "Venomoth", imagem: "../../database/media/venomoth.png" },
+    { nome: "Diglett", imagem: "../../database/media/diglett.png" },
+    { nome: "Dugtrio", imagem: "../../database/media/dugtrio.png" },
+    { nome: "Meowth", imagem: "../../database/media/meowth.png" },
+    { nome: "Persian", imagem: "../../database/media/persian.png" },
+    { nome: "Psyduck", imagem: "../../database/media/psyduck.png" },
+    { nome: "Golduck", imagem: "../../database/media/golduck.png" },
+    { nome: "Mankey", imagem: "../../database/media/mankey.png" },
+    { nome: "Primeape", imagem: "../../database/media/primeape.png" },
+    { nome: "Growlithe", imagem: "../../database/media/growlithe.png" },
+    { nome: "Arcanine", imagem: "../../database/media/arcanine.png" },
+    { nome: "Poliwag", imagem: "../../database/media/poliwag.png" },
+    { nome: "Poliwhirl", imagem: "../../database/media/poliwhirl.png" },
+    { nome: "Poliwrath", imagem: "../../database/media/poliwrath.png" },
+    { nome: "Abra", imagem: "../../database/media/abra.png" },
+    { nome: "Kadabra", imagem: "../../database/media/kadabra.png" },
+    { nome: "Alakazam", imagem: "../../database/media/alakazam.png" },
+    { nome: "Machop", imagem: "../../database/media/machop.png" },
+    { nome: "Machoke", imagem: "../../database/media/machoke.png" },
+    { nome: "Machamp", imagem: "../../database/media/machamp.png" },
+    { nome: "Bellsprout", imagem: "../../database/media/bellsprout.png" },
+    { nome: "Weepinbell", imagem: "../../database/media/weepinbell.png" },
+    { nome: "Victreebel", imagem: "../../database/media/victreebel.png" },
+    { nome: "Tentacool", imagem: "../../database/media/tentacool.png" },
+    { nome: "Tentacruel", imagem: "../../database/media/tentacruel.png" },
+    { nome: "Geodude", imagem: "../../database/media/geodude.png" },
+    { nome: "Graveler", imagem: "../../database/media/graveler.png" },
+    { nome: "Golem", imagem: "../../database/media/golem.png" },
+    { nome: "Ponyta", imagem: "../../database/media/ponyta.png" },
+    { nome: "Rapidash", imagem: "../../database/media/rapidash.png" },
+    { nome: "Slowpoke", imagem: "../../database/media/slowpoke.png" },
+    { nome: "Slowbro", imagem: "../../database/media/slowbro.png" },
+    { nome: "Magnemite", imagem: "../../database/media/magnemite.png" },
+    { nome: "Magneton", imagem: "../../database/media/magneton.png" },
+    { nome: "Farfetch'd", imagem: "../../database/media/farfetch'd.png" },
+    { nome: "Doduo", imagem: "../../database/media/doduo.png" },
+    { nome: "Dodrio", imagem: "../../database/media/dodrio.png" },
+    { nome: "Grimer", imagem: "../../database/media/grimer.png" },
+    { nome: "Muk", imagem: "../../database/media/muk.png" },
+    { nome: "Shellder", imagem: "../../database/media/shellder.png" },
+    { nome: "Cloyster", imagem: "../../database/media/cloyster.png" },
+    { nome: "Gastly", imagem: "../../database/media/gastly.png" },
+    { nome: "Haunter", imagem: "../../database/media/haunter.png" },
+    { nome: "Gengar", imagem: "../../database/media/gengar.png" },
+    { nome: "Onix", imagem: "../../database/media/onix.png" },
+    { nome: "Drowzee", imagem: "../../database/media/drowzee.png" },
+    { nome: "Hypno", imagem: "../../database/media/hypno.png" },
+    { nome: "Krabby", imagem: "../../database/media/krabby.png" },
+    { nome: "Kingler", imagem: "../../database/media/kingler.png" },
+    { nome: "Voltorb", imagem: "../../database/media/voltorb.png" },
+    { nome: "Electrode", imagem: "../../database/media/electrode.png" },
+    { nome: "Exeggcute", imagem: "../../database/media/exeggcute.png" },
+    { nome: "Exeggutor", imagem: "../../database/media/exeggutor.png" },
+    { nome: "Cubone", imagem: "../../database/media/cubone.png" },
+    { nome: "Marowak", imagem: "../../database/media/marowak.png" },
+    { nome: "Hitmonlee", imagem: "../../database/media/hitmonlee.png" },
+    { nome: "Hitmonchan", imagem: "../../database/media/hitmonchan.png" },
+    { nome: "Lickitung", imagem: "../../database/media/lickitung.png" },
+    { nome: "Koffing", imagem: "../../database/media/koffing.png" },
+    { nome: "Weezing", imagem: "../../database/media/weezing.png" },
+    { nome: "Rhyhorn", imagem: "../../database/media/rhyhorn.png" },
+    { nome: "Rhydon", imagem: "../../database/media/rhydon.png" },
+    { nome: "Chansey", imagem: "../../database/media/chansey.png" },
+    { nome: "Tangela", imagem: "../../database/media/tangela.png" },
+    { nome: "Kangaskhan", imagem: "../../database/media/kangaskhan.png" },
+    { nome: "Horsea", imagem: "../../database/media/horsea.png" },
+    { nome: "Seadra", imagem: "../../database/media/seadra.png" },
+    { nome: "Goldeen", imagem: "../../database/media/goldeen.png" },
+    { nome: "Seaking", imagem: "../../database/media/seaking.png" },
+    { nome: "Staryu", imagem: "../../database/media/staryu.png" },
+    { nome: "Starmie", imagem: "../../database/media/starmie.png" },
+    { nome: "Mr. Mime", imagem: "../../database/media/mr. mime.png" },
+    { nome: "Scyther", imagem: "../../database/media/scyther.png" },
+    { nome: "Jynx", imagem: "../../database/media/jynx.png" },
+    { nome: "Electabuzz", imagem: "../../database/media/electabuzz.png" },
+    { nome: "Magmar", imagem: "../../database/media/magmar.png" },
+    { nome: "Pinsir", imagem: "../../database/media/pinsir.png" },
+    { nome: "Tauros", imagem: "../../database/media/tauros.png" },
+    { nome: "Magikarp", imagem: "../../database/media/magikarp.png" },
+    { nome: "Gyarados", imagem: "../../database/media/gyarados.png" },
+    { nome: "Lapras", imagem: "../../database/media/lapras.png" },
+    { nome: "Ditto", imagem: "../../database/media/ditto.png" },
+    { nome: "Eevee", imagem: "../../database/media/eevee.png" },
+    { nome: "Vaporeon", imagem: "../../database/media/vaporeon.png" },
+    { nome: "Jolteon", imagem: "../../database/media/jolteon.png" },
+    { nome: "Flareon", imagem: "../../database/media/flareon.png" },
+    { nome: "Porygon", imagem: "../../database/media/porygon.png" },
+    { nome: "Omanyte", imagem: "../../database/media/omanyte.png" },
+    { nome: "Omastar", imagem: "../../database/media/omastar.png" },
+    { nome: "Kabuto", imagem: "../../database/media/kabuto.png" },
+    { nome: "Kabutops", imagem: "../../database/media/kabutops.png" },
+    { nome: "Aerodactyl", imagem: "../../database/media/aerodactyl.png" },
+    { nome: "Snorlax", imagem: "../../database/media/snorlax.png" },
+    { nome: "Articuno", imagem: "../../database/media/articuno.png" },
+    { nome: "Zapdos", imagem: "../../database/media/zapdos.png" },
+    { nome: "Moltres", imagem: "../../database/media/moltres.png" },
+    { nome: "Dratini", imagem: "../../database/media/dratini.png" },
+    { nome: "Dragonair", imagem: "../../database/media/dragonair.png" },
+    { nome: "Dragonite", imagem: "../../database/media/dragonite.png" },
+    { nome: "Mewtwo", imagem: "../../database/media/mewtwo.png" },
+    { nome: "Mew", imagem: "../../database/media/mew.png" }
+    ];
+
+
+    function sortearPokemon() {
+        let indice = Math.floor(Math.random() * pokemons.length);
+        let pokemon = pokemons[indice];
+        let nomePokemon = pokemon.nome;
+        let imagemPokemon = pokemon.imagem;
+        
+        let mensagem = document.getElementById("mensagem"); 
+        let conteudomensagem = "Parabéns, Você sorteou o Pokemon ";
+        mensagem.innerHTML = (conteudomensagem + nomePokemon);
+        
+        let imagem = document.getElementById("imagem");
+        
+        imagem.src = imagemPokemon;
+        }
+    // Adiciona o evento de clique no botão para sortear o Pokemon
+        let botaoSortear = document.getElementById("botao-sortear");
+        botaoSortear.addEventListener("click", sortearPokemon);
+        // Adiciona o evento de pressionar a tecla "Enter" para sortear o Pokemon
+        let campoNome = document.getElementById("campo-nome");
+        campoNome.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+        sortearPokemon();
+        }
+        });
+
+
+
+
+
+    
