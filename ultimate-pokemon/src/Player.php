@@ -69,7 +69,7 @@ public function save(): bool
         $connection = new MySQL();
         
         if (isset($this->idPlayer)) {
-          $sql = "UPDATE player SET email = '{$this->email}', nickName = '{$this->nickname}',  WHERE idPlayer = {$this->idPlayer}";
+          $sql = "UPDATE player SET email = '{$this->email}', nickName = '{$this->nickname}' WHERE idPlayer = {$this->idPlayer}";
         }
 
         else {
