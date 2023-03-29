@@ -49,6 +49,11 @@ $pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
                             echo "<div class=\"additional-infos\">" . "<div class=\"stat-field\"><span>Overall</span><span class=\"pokemon-over\">" . $pokemon->getOver() . "</span></div>" . "<div class=\"stat-field\"><span>Altura</span><span class=\"pokemon-height\">" . $pokemon->getAltura() . "</span></div>" . "<div class=\"stat-field\"><span>Peso</span><span class=\"pokemon-weight\">" . $pokemon->getPeso() . "</span></div>" . "</div>";
                             echo "</div>";
                         }
+                    } else{
+                        ?>
+                        <h3>Você ainda não possui nenhum Pokémon</h3>
+                        <a href="">Clique aqui para ir para o sorteador de Pokémons</a>
+                        <?php
                     }
                     
                     ?>
