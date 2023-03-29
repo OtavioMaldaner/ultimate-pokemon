@@ -148,6 +148,21 @@ p, input, label, h1, h2, h3, span, a {
     justify-content: center;
     transition: all ease .2s;
 }
+
+.add-pokemon{
+    background-color: var(--primary-color);
+    margin: 20px auto;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all ease .2s;
+    box-shadow: 0px 4px 12px #ff95008a;
+    color: var(--bg-color-2);
+}
+
 @media (max-width: 712px) {
     .pokemon-carousel {
         flex-direction: column;

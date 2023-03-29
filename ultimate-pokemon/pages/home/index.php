@@ -28,18 +28,22 @@ $pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
 
 <body>
     <div class="container">
-        <div class="pokemon-carousel">
-            <button class="arrow-left control" aria-label="Previous image">
-                <img src="../imagens/left_arrow.svg" alt="">
-            </button>
-            <div class="gallery-wrapper">
-                <div class="gallery">
+        
                     <?php
                     if (count($pokemons_carteira) > 0) {
                         foreach ($pokemons_carteira as $pokemons) {
                             $id = $pokemons->getIdPokemon();
                             $pokemon = Pokemon::find($id);
                             $img = Media::findMediaByPokemon($id);
+                            
+                            echo "<div class=\"pokemon-carousel\">";
+                            echo "<button class=\"arrow-left control\" aria-label=\"Previous image\">";
+                            echo "<img src=\"../imagens/left_arrow.svg\">";
+                            echo "</button>";
+                            
+                            echo "<div class=\"gallery-wrapper\">";
+                            echo "<div class=\"gallery\">";
+
 
                             echo "<div class=\"item current-item\">";
                             echo "<h2 class=\"pokemon-type\">" . $pokemon->getTipo() . "</h2>";
@@ -48,30 +52,29 @@ $pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
                             echo "<img src=\"../../database/media/{$img->getPath()}\" alt=\"Default icon\">";
                             echo "<div class=\"additional-infos\">" . "<div class=\"stat-field\"><span>Overall</span><span class=\"pokemon-over\">" . $pokemon->getOver() . "</span></div>" . "<div class=\"stat-field\"><span>Altura</span><span class=\"pokemon-height\">" . $pokemon->getAltura() . "</span></div>" . "<div class=\"stat-field\"><span>Peso</span><span class=\"pokemon-weight\">" . $pokemon->getPeso() . "</span></div>" . "</div>";
                             echo "</div>";
+                            echo "</div>";
+                            echo "</div>";
+                            echo "<button class=\"arrow-right control\" aria-label=\"Next image\">";
+                            echo "<img src=\"../imagens/right_arrow.svg\">";
+                            echo "</button>";
+                            echo "<div class=\"mobile-arrows\">";
+                            echo "<div class=\"control mobile-arrow-left\" aria-label=\"Previous image\">";
+                            echo "<img src=\"../imagens/left_arrow.svg\" alt=\"\">";
+                            echo "</div>";
+                            echo "<div class=\"control mobile-arrow-right\" aria-label=\"Next image\">";
+                            echo "<img src=\"../imagens/right_arrow.svg\">";
+                            echo "</div>";
+                            echo "</div>";
+
                         }
                     } else{
                         ?>
-                        <h3>Você ainda não possui nenhum Pokémon</h3>
-                        <a href="">Clique aqui para ir para o sorteador de Pokémons</a>
+                        <h3 class="no-pokemons">Você ainda não possui nenhum Pokémon !</h3>
+                        <a href="" class="add-pokemon">Adicione um Pokémon à sua Pokédex</a>
                         <?php
                     }
                     
                     ?>
-                </div>
-            </div>
-            <button class="arrow-right control" aria-label="Next image">
-                <img src="../imagens/right_arrow.svg" alt="">
-            </button>
-            <div class="mobile-arrows">
-                <div class="control mobile-arrow-left" aria-label="Previous image">
-                    <img src="../imagens/left_arrow.svg" alt="">
-                </div>
-                <div class="control mobile-arrow-right" aria-label="Next image">
-                    <img src="../imagens/right_arrow.svg" alt="">
-                </div>
-            </div>
-
-
 
         </div>
 </body>
