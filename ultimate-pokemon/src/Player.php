@@ -95,7 +95,7 @@ public function save(): bool
         $player = new Player;
         $player->constructorCreate(
             $res[0]['email'],
-            $res[0]['nickName'],
+            $res[0]['nickname'],
             $res[0]['senha']
         );
         $player->setIdPlayer($res[0]['idPlayer']);

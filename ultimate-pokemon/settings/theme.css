@@ -1,19 +1,22 @@
-@font-face {
-font-family: 'Poppins';
-    src: url('./fonts/poppins/Poppins-Light.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 :root {
     /* Colors */
-    --primary-color: #f5a623;
-    --primary-text-color: #000000;
-    --seconadry-text-color: #ffffff;
+    --bg-color-1: #9900ff;
+    --bg-color-2: #141923;
+    --primary-color: #f9dc5c;
+    --primary-text-color: #ff9500;
+    --secondary-text-color: #141923;
+    --seconadry-text-color: #fff
 
     /* Fonts */
-    --main-font: 'Poppins';
+    --main-font: 'Pokemon Solid', sans-serif;
+    --second-font: 'Delicious Handrawn', cursive;
+    --third-font: 
 
     /* Font sizes */
+    --font-ggg: 50px;
     --font-gg: 30px;
     --font-g: 27px;
     --font-mm: 24px;
@@ -27,5 +30,5 @@ font-family: 'Poppins';
     --screen-mobileL: 425px;
     --screen-tablet: 768px;
     --screen-laptop: 1024px;
-    --screen-laptopL: 1440px;
+    --screen-desktop: 1440px;
 }
