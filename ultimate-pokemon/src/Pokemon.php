@@ -106,8 +106,7 @@ public function save(): bool
     {
         $connection = new MySQL();
         $sql = "DELETE FROM pokemon WHERE idPokemon = {$this->idPokemon}";
-        $teste =  $connection->execute($sql);
-        return true;
+        return $connection->execute($sql);
     }
 
     public static function find($idPokemon): Pokemon

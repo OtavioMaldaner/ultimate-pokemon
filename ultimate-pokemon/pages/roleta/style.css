@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Pokemon+Solid');
+
+
+body {
+    background-color: #f2f2f2;
+    font-family: 'Pokemon Solid', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    color: #c62828;
+    margin-top: 50px;
+}
+
+img {
+    max-width: 200px;
+}
+
+button {
+    background-color: #c62828;
+    color: white;
+    font-size: 24px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 50px;
+}
+
+.result img {
+    max-width: 200px;
+    margin: 20px;
+    border: 5px solid #c62828;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #c62828;
+}
+
+.result p {
+    font-size: 24px;
+    color: #c62828;
+}
