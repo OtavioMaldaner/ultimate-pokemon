@@ -57,6 +57,7 @@ if (isset($_COOKIE[$cookie_nome])) {
     <form method="post">
         <input type="submit" name="sortear" value="Sortear um Pokemon" />
     </form>
+    <a href="../home">Voltar para o Menu Inicial</a>
 </div>
 </body>
 </html>
