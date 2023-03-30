@@ -35,7 +35,7 @@ $pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
                 </div>
                 <div class="nav-fields">
                     <a class="nav-option" href="#">Batalha</a>
-                    <a class="nav-option" href="#">Adquirir pokémon</a>
+                    <a class="nav-option" href="../roleta">Adquirir pokémon</a>
                     <a class="nav-option" href="../edit-account">Editar conta</a>
                     <a class="nav-option" href="#">Pokédex</a>
                 </div>
@@ -62,7 +62,7 @@ $pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
 
 
 
-                echo "<div class=\"item current-item\">";
+                echo "<div class=\"item current-item animated-carousel\">";
                 echo "<h2 style=\"color: #fff\" class=\"pokemon-type\">" . $pokemon->getTipo() . "</h2>";
                 echo "<h1 style=\"color: #fff\" class=\"pokemon-name\">" . $pokemon->getNome() . "</h1>";
                 echo "<h3 style=\"color: #fff\" class=\"pokemon-owner\">" . $_SESSION['nickName'] . "</h3>";
@@ -120,7 +120,7 @@ $pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
             } else if (currentItem < 0) {
                 currentItem = maxItems - 1;
             }
-            items.forEach(item => item.classList.remove('current-item'));
+            items.forEach(item => {item.classList.remove('current-item'); item.classList.remove('animated-carousel')});
             items[currentItem].classList.add('current-item');
             clearInterval(carouselInterval);
         })

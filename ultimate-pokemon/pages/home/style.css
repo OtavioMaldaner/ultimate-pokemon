@@ -1,6 +1,16 @@
 @import '../../settings/theme.css';
 @import '../../settings/global.css';
 
+@keyframes animatedcarousel {
+    0% {
+        opacity: 0;
+    } 50% {
+        opacity: 1;
+    } 100% {
+        opacity: 0;
+    }
+}
+
 body,
 html {
     min-height: 100vh;
@@ -60,6 +70,10 @@ a {
 .gallery-wrapper .gallery .item {
     display: none;
     text-align: center;
+}
+
+.animated-carousel {
+    animation: animatedcarousel 3s infinite;
 }
 
 .item h1, h2, h3, span {
