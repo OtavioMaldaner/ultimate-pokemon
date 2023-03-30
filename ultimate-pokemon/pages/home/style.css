@@ -62,6 +62,10 @@ a {
     text-align: center;
 }
 
+.item h1, h2, h3, span {
+    color: var(--terciary-text-color);
+}
+
 .gallery-wrapper .gallery .current-item {
     width: 70vw;
     max-width: 800px;
@@ -80,7 +84,7 @@ a {
 
 .arrow-left,
 .arrow-right {
-    /* position: absolute; */
+    position: relative;
     top: 0;
     left: 0;
     right: auto;
@@ -99,14 +103,31 @@ a {
     /* padding: 30px 0; */
     margin: 0 20px 0 0;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow-left img,
+.arrow-right img {
+    position: absolute;
+    height: 30px;
+}
+
+.arrow-left img {
+    transform: rotate(180deg);
 }
 
 .arrow-right {
     left: auto;
+    /* position: relative; */
     right: 0;
     background: transparent;
     background-color: black;
     margin: 0 0 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .arrow-left:hover,
@@ -138,6 +159,15 @@ a {
     align-items: center;
     justify-content: center;
     transition: all ease .2s;
+}
+
+.mobile-arrow-left img,
+.mobile-arrow-right img {
+    height: 30px;
+}
+
+.mobile-arrow-left img {
+    transform: rotate(180deg);
 }
 
 .add-pokemon{
