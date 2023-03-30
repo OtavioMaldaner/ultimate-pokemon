@@ -7,6 +7,7 @@
     - [] Editar conta;
     - [] Gerenciar time;
 - [] Tratamento de pokémons na carteira;
+- [] Animação boa no carousel;
 ### Página de login
     [] Alterar responsividade;
 ### Página inicial
