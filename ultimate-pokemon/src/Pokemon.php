@@ -150,41 +150,11 @@ public function save(): bool
       
       return $pokemons;
   }
-
-  public static function findallByPlayer($idPlayer): array
-    {
-        $connection = new MySQL();
-        $sql = "SELECT * FROM pokemon WHERE idPlayer = {$idPlayer}";
-        $results = $connection->query($sql);
-        
-        $pokemons = array();
-        foreach($results as $result){
-          $p = new Pokemon();
-          $p->constructorCreate(
-          $result[0]['nome'],
-          $result[0]['peso'],
-          $result[0]['altura'],
-          $result[0]['tipo'],
-          $result[0]['over']
-          );
-          $p->setIdPlayer($result[0]['idPlayer']);
-          $p->setIdPokemon($result[0]['idPokemon']);
-
-          $pokemons[] = $p;
-            
-        }
-        
-        return $pokemons;
-    }
-
-    public static function countPokemons() : int
-    {
-        $connection = new MySQL();
-        $sql = "SELECT COUNT(*) as numero FROM pokemon";
-        $result = $connection->query($sql);
-        $c = $result[0]['numero'];
-        return $c;
-    }
-
+  public static function findIdPokemonByName($pokemonName){
+      $connection = new MySQL();
+      $sql = "SELECT idPokemon FROM pokemon WHERE nome = '{$pokemonName}'";
+      $result = $connection->query($sql);
+      return $result[0]['idPokemon'];
+  }
 
 }

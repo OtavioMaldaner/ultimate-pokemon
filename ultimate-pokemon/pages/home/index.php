@@ -38,6 +38,7 @@ $pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
                     <a class="nav-option" href="../roleta">Adquirir pokémon</a>
                     <a class="nav-option" href="../edit-account">Editar conta</a>
                     <a class="nav-option" href="#">Pokédex</a>
+                    <a class="nav-option" href="../IA_Pokemon">Scannear pokemon</a>
                 </div>
                 <div class="logout-area">
                     <a href="../login/logout.php">

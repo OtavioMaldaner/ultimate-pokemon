@@ -40,7 +40,7 @@ class Wallet implements ActiveRecord {
     public function save(): bool
     {
         $connection = new MySQL();
-        if (isset($this->idPokemon)) {
+        if (isset($this->idWallet)) {
             $sql = "UPDATE player_wallet SET idPlayer = '{$this->idPlayer}' ,idPokemon = '{$this->idPokemon}' WHERE idTransacao = {$this->idTransacao}";
         } else {
             $connection = new MySQL();
