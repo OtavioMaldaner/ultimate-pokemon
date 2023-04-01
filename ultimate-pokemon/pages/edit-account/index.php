@@ -36,23 +36,23 @@ if (isset($_SESSION['idPlayer'])) {
 </head>
 
 <body>
-    <div class="edit-account-container">
-        <section class="edit-account-form">
-            <form action="index.php" method="post" enctype="multipart/form-data">
-                <h1 class="edit-account-form-title">Editar conta</h1>
+<div class="edit-account-util">
+    <div class="edit-account">
+        <h1 class="titulo">Editar conta</h1>
+        <form action="index.php" method="post" enctype="multipart/form-data">
 
-                <label for="name">Nickname</label>
-                <input type="text" name="nickName" id="nickName" value="<?php echo $player->getNickName() ?>" required>
+            <label for="nickName">Usuário:</label>
+            <input type="text" name="nickName" id="nickName" value="<?php echo $player->getNickName() ?>" required>
 
-                <label for="email">E-mail</label>
-                <input type="email" name="email" id="email" value="<?php echo $player->getEmail() ?>" required>
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email" value="<?php echo $player->getEmail() ?>" required>
 
-                <input type="submit" value="Editar" name="button">
-            </form>
-        </section>
+            <a class="go-home" href="../home">Voltar para a tela inicial</a>
+
+            <input type="submit" value="Editar" class="botao" name="button">
+        </form>
     </div>
-
-    <script src="../home/main.js"></script>
+</div>
 </body>
 
 </html>

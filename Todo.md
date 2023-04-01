@@ -13,4 +13,4 @@
 ### Página inicial
     - [] Alterar responsividade;
 ### Página de edição de conta
-    - [] Alterar CSS e os campos
+    - [x] Alterar CSS e os campos
