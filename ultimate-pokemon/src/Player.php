@@ -141,6 +141,28 @@ public function save(): bool
         }
     }
 
+    public static function getOpponents(): array {
+        $connection = new MySQL();
+        $sql = "SELECT * FROM player WHERE idPlayer != '{$_SESSION['idPlayer']}'";
+        $results = $connection->query($sql);
+
+        $opponents = array();
+
+        if (is_array($results)) {
+            foreach($results as $result) {
+                $p = new Player();
+                $p->constructorCreate(
+                    $result['email'],
+                    $result['nickName'],
+                    $result['senha']
+                );
+                $p->setIdPlayer($result['idPlayer']);
+                $opponents[] = $p;
+            }
+        } 
+        return $opponents;
+    }
+
     public static function refreshSession(): void
     {
         $connection = new MySQL();
@@ -216,4 +238,3 @@ public function save(): bool
       return $connection->execute($sql);
     }
 }
-?>

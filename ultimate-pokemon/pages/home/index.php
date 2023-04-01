@@ -34,7 +34,7 @@ $pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
 
                 </div>
                 <div class="nav-fields">
-                    <a class="nav-option" href="#">Batalha</a>
+                    <a class="nav-option" href="../battle">Batalha</a>
                     <a class="nav-option" href="../roleta">Adquirir pokémon</a>
                     <a class="nav-option" href="../edit-account">Editar conta</a>
                     <a class="nav-option" href="#">Pokédex</a>
