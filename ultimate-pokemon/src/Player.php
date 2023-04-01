@@ -153,7 +153,7 @@ public function save(): bool
                 $p = new Player();
                 $p->constructorCreate(
                     $result['email'],
-                    $result['nickName'],
+                    $result['nickname'],
                     $result['senha']
                 );
                 $p->setIdPlayer($result['idPlayer']);
@@ -175,23 +175,25 @@ public function save(): bool
         
     }
 
-    public static function batalha($player1, $player2): string{
+    public static function batalha(int $player1, int $player2): string{
         $connection = new MySQL();
         $sqlplayer1 = "SELECT idPokemon FROM player_wallet WHERE idPlayer = {$player1}";
         $results = $connection->query($sqlplayer1);
         $pokemonsPlayer1 = array();
         foreach($results as $result){
-            $sql = "SELECT over FROM pokemon WHERE idPokemon = {$result}";
+            $sql = "SELECT pokemon.over FROM pokemon WHERE idPokemon = {$result['idPokemon']}";
+            // echo $sql;
+            // die();
             $over = $connection->query($sql);
-            $pokemonsPlayer1 = $over['over'];
+            $pokemonsPlayer1[] = $over[0]['over'];
         }
         $sqlplayer2 = "SELECT idPokemon FROM player_wallet WHERE idPlayer = {$player2}";
         $results = $connection->query($sqlplayer2);
         $pokemonsPlayer2 = array();
         foreach($results as $result){
-            $sql = "SELECT over FROM pokemon WHERE idPokemon = {$result}";
+            $sql = "SELECT pokemon.over FROM pokemon WHERE idPokemon = {$result['idPokemon']}";
             $over = $connection->query($sql);
-            $pokemonsPlayer2 = $over['over'];
+            $pokemonsPlayer2[] = $over[0]['over'];
         }
         $overplayer1 = array_sum($pokemonsPlayer1) / count($pokemonsPlayer1);
         $overplayer2 = array_sum($pokemonsPlayer2) / count($pokemonsPlayer2);

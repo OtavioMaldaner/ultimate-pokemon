@@ -100,4 +100,17 @@ class Wallet implements ActiveRecord {
       return $wallets;
     }
 
+    public static function verifyPlayerWallet($idPlayer): bool {
+        $connection = new MySQL();
+        $sql = "SELECT * FROM player_wallet WHERE idPlayer = {$idPlayer}";
+        $results = $connection->query($sql);
+
+        if (is_array($results)) {
+            if (count($results) > 0) {
+                return true;
+            }
+        }
+       return false;
+    }
+
 }

@@ -12,6 +12,10 @@ Player::refreshSession();
 
 $opponents = Player::getOpponents();
 
+if (isset($_GET['idOpponent'])) {
+    Player::batalha(intval($_SESSION['idPlayer']), intval($_GET['idOpponent']));
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,9 +53,14 @@ $opponents = Player::getOpponents();
             <div class="users-list">
                 <?php
                     foreach($opponents as $opponent) {
-                        echo $opponent->getNickName();
+                        if (Wallet::verifyPlayerWallet($opponent->getIdPlayer())) {
+                            echo "<a href=\"index.php?idOpponent={$opponent->getIdPlayer()}\">{$opponent->getNickName()}</a>";
+                        } else {
+                            continue;
+                        }
                     }
                 ?>
+                
             </div>
         </div>
     </div>
