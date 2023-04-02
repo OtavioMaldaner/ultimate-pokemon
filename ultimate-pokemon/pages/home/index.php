@@ -89,7 +89,7 @@ $pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
         } else {
         ?>
             <h3 class="no-pokemons">Você ainda não possui nenhum Pokémon !</h3>
-            <a href="" class="add-pokemon">Adicione um Pokémon à sua Pokédex</a>
+            <a href="../roleta" class="add-pokemon">Adicione um Pokémon à sua Pokédex</a>
         <?php
         }
         ?>

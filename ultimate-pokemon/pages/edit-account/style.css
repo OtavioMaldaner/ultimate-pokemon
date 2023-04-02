@@ -31,6 +31,7 @@ body {
 	max-width: 400px;
 	box-shadow: 0 0 20px var(--primary-text-color);
 	transition: all ease .3s;
+	width: 100%;
 }
 @media (max-width: 475px) {
 	.edit-account {
@@ -44,6 +45,7 @@ body {
     text-align: center;
     color: var(--primary-color);
     text-shadow: 2px 2px var(--primary-text-color);
+	font-family: 'Pokemon Solid', sans-serif;
 }
 
 form {
@@ -55,6 +57,7 @@ label {
 	font-size: var(--font-mm);
 	margin-bottom: 10px;
 	color: var(--primary-text-color);
+	font-family: 'Pokemon Solid', sans-serif;
 }
 
 input {

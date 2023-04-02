@@ -13,8 +13,13 @@ h2,
 h3,
 span,
 a {
-    font-family: var(--main-font), sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: var(--font-m);
+    color: white;
+}
+
+a {
+    text-decoration: none;
 }
 
 .container {
@@ -62,6 +67,10 @@ a {
 .nav-fields a:hover {
     opacity: 1;
 }
-.container {
-    color: var(--seconadry-text-color);
+.users-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }

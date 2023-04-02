@@ -42,7 +42,7 @@ if (isset($_POST["button"])) {
             <label for="password">Password</label>
             <input type="password" name="password" id="password" required>
 
-            <input type="submit" value="Create" name="button" class="botao">
+            <input type="submit" value="Criar" name="button" class="botao">
         </form>
     </section>
 </body>
