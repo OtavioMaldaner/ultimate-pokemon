@@ -12,6 +12,7 @@ Player::refreshSession();
 
 $pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
 
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -34,10 +35,10 @@ $pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
 
                 </div>
                 <div class="nav-fields">
+                    <a class="nav-option" href="../home">Home</a>
                     <a class="nav-option" href="../battle">Batalha</a>
                     <a class="nav-option" href="../roleta">Adquirir pokémon</a>
                     <a class="nav-option" href="../edit-account">Editar conta</a>
-                    <a class="nav-option" href="#">Pokédex</a>
                     <a class="nav-option" href="../IA_Pokemon">Scannear pokemon</a>
                 </div>
                 <div class="logout-area">
@@ -69,6 +70,7 @@ $pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
                 echo "<h3 style=\"color: #fff\" class=\"pokemon-owner\">" . $_SESSION['nickName'] . "</h3>";
                 echo "<img src=\"../../database/media/{$img->getPath()}\" alt=\"Default icon\">";
                 echo "<div class=\"additional-infos\">" . "<div class=\"stat-field\"><span style=\"color: #fff\">Overall</span><span style=\"color: #fff\" class=\"pokemon-over\">" . $pokemon->getOver() . "</span></div>" . "<div style=\"color: #fff\" class=\"stat-field\"><span style=\"color: #fff\" >Altura</span><span style=\"color: #fff\" class=\"pokemon-height\">" . $pokemon->getAltura() . "</span></div>" . "<div class=\"stat-field\"><span style=\"color: #fff\" >Peso</span><span style=\"color: #fff\" class=\"pokemon-weight\">" . $pokemon->getPeso() . "</span></div>" . "</div>";
+                echo "<a href='formDelete.php?id={$pokemons->getIdTransacao()}'>excluir</a>";
                 echo "</div>";
             }
             echo "</div>";

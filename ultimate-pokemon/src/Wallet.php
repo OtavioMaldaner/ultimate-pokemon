@@ -52,9 +52,8 @@ class Wallet implements ActiveRecord {
     public function delete(): bool
     {
         $connection = new MySQL();
-        $sql = "DELETE FROM player_wallet WHERE idTransacao = {$this->idTransacao}";
-        $teste =  $connection->execute($sql);
-        return true;
+        $sql = "DELETE  FROM player_wallet WHERE idTransacao = {$this->idTransacao}";
+        return $connection->execute($sql);
     }
 
     public static function find($idTransacao): Wallet

@@ -12,10 +12,11 @@ Player::refreshSession();
 
 $opponents = Player::getOpponents();
 
-if (isset($_GET['idOpponent'])) {
-    Player::batalha(intval($_SESSION['idPlayer']), intval($_GET['idOpponent']));
-}
-
+//if (isset($_GET['idOpponent'])) {
+//    $vencedor = Player::batalha(intval($_SESSION['idPlayer']), intval($_GET['idOpponent']));
+//    $player_vencedor = Player::find($vencedor);
+//    var_dump($player_vencedor);
+//}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,10 +35,11 @@ if (isset($_GET['idOpponent'])) {
 
                 </div>
                 <div class="nav-fields">
+                    <a class="nav-option" href="../home">Home</a>
                     <a class="nav-option" href="../battle">Batalha</a>
                     <a class="nav-option" href="../roleta">Adquirir pokémon</a>
                     <a class="nav-option" href="../edit-account">Editar conta</a>
-                    <a class="nav-option" href="#">Pokédex</a>
+                    <a class="nav-option" href="../IA_Pokemon">Scannear pokemon</a>
                 </div>
                 <div class="logout-area">
                     <a href="../login/logout.php">
@@ -47,16 +49,23 @@ if (isset($_GET['idOpponent'])) {
             </div>
         </div>
         <div class="users-list-area">
-            <h1 class="users-list-title">
-                Usuários disponíveis para batalha
-            </h1>
             <div class="users-list">
                 <?php
-                    foreach($opponents as $opponent) {
-                        if (Wallet::verifyPlayerWallet($opponent->getIdPlayer())) {
-                            echo "<a href=\"index.php?idOpponent={$opponent->getIdPlayer()}\">{$opponent->getNickName()}</a>";
-                        } else {
-                            continue;
+                    if (isset($_GET['idOpponent'])) {
+                    $vencedor = Player::batalha(intval($_SESSION['idPlayer']), intval($_GET['idOpponent']));
+                    $player_vencedor = Player::find($vencedor);
+                    echo "<h1 class='users-list-title'> O player vencedor foi {$player_vencedor->getNickName()} </h1>";
+                    echo "<a href='index.php'>Batalhar novamente</a>";
+
+                    }else {
+                        echo "<h1 class='users-list-title'>Usuários disponíveis para batalha</h1>";
+
+                        foreach ($opponents as $opponent) {
+                            if (Wallet::verifyPlayerWallet($opponent->getIdPlayer())) {
+                                echo "<a href=\"index.php?idOpponent={$opponent->getIdPlayer()}\">{$opponent->getNickName()}</a>";
+                            } else {
+                                continue;
+                            }
                         }
                     }
                 ?>
