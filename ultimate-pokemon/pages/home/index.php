@@ -65,12 +65,12 @@ $pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
 
 
                 echo "<div class=\"item current-item animated-carousel\">";
-                echo "<h2 style=\"color: #fff\" class=\"pokemon-type\">" . $pokemon->getTipo() . "</h2>";
-                echo "<h1 style=\"color: #fff\" class=\"pokemon-name\">" . $pokemon->getNome() . "</h1>";
-                echo "<h3 style=\"color: #fff\" class=\"pokemon-owner\">" . $_SESSION['nickName'] . "</h3>";
+                echo "<h2 class=\"pokemon-type\">" . $pokemon->getTipo() . "</h2>";
+                echo "<h1 class=\"pokemon-name\">" . $pokemon->getNome() . "</h1>";
+                echo "<h3 class=\"pokemon-owner\">" . $_SESSION['nickName'] . "</h3>";
                 echo "<img src=\"../../database/media/{$img->getPath()}\" alt=\"Default icon\">";
-                echo "<div class=\"additional-infos\">" . "<div class=\"stat-field\"><span style=\"color: #fff\">Overall</span><span style=\"color: #fff\" class=\"pokemon-over\">" . $pokemon->getOver() . "</span></div>" . "<div style=\"color: #fff\" class=\"stat-field\"><span style=\"color: #fff\" >Altura</span><span style=\"color: #fff\" class=\"pokemon-height\">" . $pokemon->getAltura() . "</span></div>" . "<div class=\"stat-field\"><span style=\"color: #fff\" >Peso</span><span style=\"color: #fff\" class=\"pokemon-weight\">" . $pokemon->getPeso() . "</span></div>" . "</div>";
-                echo "<a href='formDelete.php?id={$pokemons->getIdTransacao()}'>excluir</a>";
+                echo "<div class=\"additional-infos\">" . "<div class=\"stat-field\"><span>Overall</span><span class=\"pokemon-over\">" . $pokemon->getOver() . "</span></div>" . "<div class=\"stat-field\"><span >Altura</span><span class=\"pokemon-height\">" . $pokemon->getAltura() . "</span></div>" . "<div class=\"stat-field\"><span >Peso</span><span class=\"pokemon-weight\">" . $pokemon->getPeso() . "</span></div>" . "</div>";
+                echo "<a href='formDelete.php?id={$pokemons->getIdTransacao()}'>Excluir</a>";
                 echo "</div>";
             }
             echo "</div>";
