@@ -1,13 +1,13 @@
 # Coisas a fazer
 ### Homepage
-- [] Barra de navegação;
-    - [] Acesso a batalha;
-    - [] Sorteio de carta;
-    - [] Logout;
-    - [] Editar conta;
-    - [] Gerenciar time;
-- [] Tratamento de pokémons na carteira;
-- [] Animação boa no carousel;
+- [x] Barra de navegação;
+    - [x] Acesso a batalha;
+    - [x] Sorteio de carta;
+    - [x] Logout;
+    - [x] Editar conta;
+    - [x] Gerenciar time;
+- [x] Tratamento de pokémons na carteira;
+- [x] Animação boa no carousel;
 ### Página de login
     [] Alterar responsividade;
 ### Página inicial

@@ -156,5 +156,19 @@ public function save(): bool
       $result = $connection->query($sql);
       return $result[0]['idPokemon'];
   }
+  public static function verificaPokemonNaCarteira($idPokemon, $idPlayer) : bool {
+
+      $connection = new MySQL();
+      $sql = "SELECT * FROM player_wallet WHERE idPokemon = {$idPokemon} and idPlayer = {$idPlayer}";
+      $result = $connection->query($sql);
+      if(count($result) >= 1){
+          return true;
+
+      }else{
+          return false;
+      }
+
+
+  }
 
 }

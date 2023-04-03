@@ -12,9 +12,15 @@ Player::refreshSession();
 
 if (isset($_POST["save"])) {
     if ($_POST["save"] != "Salvar") {
+
         $idPokemon = Pokemon::findIdPokemonByName($_POST['save']);
-        $transacao = new Wallet($_SESSION['idPlayer'], $idPokemon);
-        $transacao->save();
+        $temPokemon = Pokemon::verificaPokemonNaCarteira($idPokemon,$_SESSION['idPlayer']);
+        if($temPokemon){
+            header("location: ../login");
+        }else{
+            $transacao = new Wallet($_SESSION['idPlayer'], $idPokemon);
+            $transacao->save();
+        }
     } else {
         header("location: ../home/");
     }
