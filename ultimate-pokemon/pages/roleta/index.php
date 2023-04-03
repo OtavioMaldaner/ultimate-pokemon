@@ -1,12 +1,60 @@
 <?php
 
-$pokemons = array("bulbasaur.png", "charmander.png", "squirtle.png", "pikachu.png", "jigglypuff.png", "snorlax.png", "mewtwo.png", "zapdos.png", "articuno.png", "moltres.png", "dragonite.png", "mew.png");
+require_once "../../settings/config.php";
+
+session_start();
+
+if (!isset($_SESSION["idPlayer"])) {
+    header("location: ../login");
+}
+
+Player::refreshSession();
+
+?>
+
+<?php
+
+$pokemons = array("Venusaur.png",
+"Charizard.png",
+"Blastoise.png",
+"Butterfree.png",
+"Beedrill.png",
+"Pidgeot.png",
+"Fearow.png",
+"Arbok.png",
+"Pikachu.png",
+"Raichu.png",
+"Ninetales.png",
+"Vileplume.png",
+"Golduck.png",
+"Arcanine.png",
+"Poliwrath.png",
+"Alakazam.png",
+"Machamp.png",
+"Golem.png",
+"Gengar.png",
+"Onix.png",
+"Rydhon.png",
+"Magmar.png",
+"Gyarados.png",
+"Lapras.png",
+"Ditto.png",
+"Eevee.png",
+"Vaporeon.png",
+"Jolteon.png",
+"Snorlax.png",
+"Articuno.png",
+"Zapdos.png",
+"Moltres.png",
+"Dragonite.png",
+"Mewtwo.png",
+"Mew.png");
 
 // Definir o nome do cookie
 $cookie_nome = "ultimo_sorteio";
 
 // Definir o tempo de expiração do cookie em segundos (um dia)
-$cookie_expira = 10;
+$cookie_expira = 86400;
 
 // Verificar se o cookie existe
 if (isset($_COOKIE[$cookie_nome])) {

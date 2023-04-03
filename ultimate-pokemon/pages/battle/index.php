@@ -12,6 +12,8 @@ Player::refreshSession();
 
 $opponents = Player::getOpponents();
 
+$pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
+
 //if (isset($_GET['idOpponent'])) {
 //    $vencedor = Player::batalha(intval($_SESSION['idPlayer']), intval($_GET['idOpponent']));
 //    $player_vencedor = Player::find($vencedor);
@@ -51,13 +53,14 @@ $opponents = Player::getOpponents();
         <div class="users-list-area">
             <div class="users-list">
                 <?php
+                if (count($pokemons_carteira) != 0) {
                     if (isset($_GET['idOpponent'])) {
-                    $vencedor = Player::batalha(intval($_SESSION['idPlayer']), intval($_GET['idOpponent']));
-                    $player_vencedor = Player::find($vencedor);
-                    echo "<h1 class='users-list-title'> O player vencedor foi {$player_vencedor->getNickName()} </h1>";
-                    echo "<a href='index.php'>Batalhar novamente</a>";
+                        $vencedor = Player::batalha(intval($_SESSION['idPlayer']), intval($_GET['idOpponent']));
+                        $player_vencedor = Player::find($vencedor);
+                        echo "<h1 class='users-list-title'> O player vencedor foi {$player_vencedor->getNickName()} </h1>";
+                        echo "<a href='index.php'>Batalhar novamente</a>";
 
-                    }else {
+                    } else {
                         echo "<h1 class='users-list-title'>Usuários disponíveis para batalha</h1>";
 
                         foreach ($opponents as $opponent) {
@@ -68,6 +71,11 @@ $opponents = Player::getOpponents();
                             }
                         }
                     }
+                }else{
+                    echo "<h3 class='no-pokemons'>Você ainda não possui nenhum Pokémon!</h3>";
+                    echo "<a href='../roleta' class='add-pokemon'>Adicione um Pokémon à sua Pokédex</a>";
+
+                }
                 ?>
                 
             </div>

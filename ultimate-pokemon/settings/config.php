@@ -1,7 +1,7 @@
 <?php 
 /*
- * OLIFX - Feliz-RS                |  https://github.com/OtavioMaldaner/ultimate-pokemon
- * by: Otávio Maldaner             |  https://github.com/OtavioMaldaner
+ * Ultimate Pokemon - Feliz-RS                |  https://github.com/OtavioMaldaner/ultimate-pokemon
+ * by: Otávio Maldaner, Matheus Persch, Marcelo Ost             |  https://github.com/OtavioMaldaner  | https://github.com/DevTheusP  |  https://github.com/marceloost
  *
  * 2023.03.15 - Feliz - RS
  *
