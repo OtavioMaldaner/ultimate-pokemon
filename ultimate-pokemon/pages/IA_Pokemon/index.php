@@ -63,7 +63,6 @@ if (isset($_POST["save"])) {
             </div>
         </div>
         <div class="button scan-button" onclick="init()">Iniciar reconhecimento</div>
-        <div class="img"></div>
         <div id="webcam-container"></div>
         <div id="label-container"></div>
 
