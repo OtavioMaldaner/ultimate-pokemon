@@ -71,6 +71,8 @@ if (isset($_COOKIE[$cookie_nome])) {
         echo "<h2>Parabéns, você sorteou:</h2>";
         echo "<img src=\"../../database/media/$pokemon_sorteado\" alt=\"Pokemon sorteado\" />";
         echo "<a href=\"../../database/media/$pokemon_sorteado\" download>Download da imagem</a>";
+        echo "<h2>Lembre se de fazer o download da imagem , pois se a página for recarregada, o pokemón será perdido!</h2>";
+        echo "<h2>Envie essa imagem para seu dispositivo móvel para pode scannear posteriormente</h2>";
 
 
         // Definir o novo valor do cookie com a data atual
@@ -83,6 +85,8 @@ if (isset($_COOKIE[$cookie_nome])) {
     echo "<h2>Parabéns, você sorteou:</h2>";
     echo "<img src=\"../../database/media/$pokemon_sorteado\" alt=\"Pokemon sorteado\" />";
     echo "<a href=\"../../database/media/$pokemon_sorteado\" download>Download da imagem</a>";
+    echo "<h2>Lembre se de fazer o download da imagem , pois se a página for recarregada, o pokemón será perdido!</h2>";
+    echo "<h2>Envie essa imagem para seu dispositivo móvel para pode scannear posteriormente</h2>";
 
 
     // Definir o valor do cookie com a data atual
@@ -97,14 +101,11 @@ if (isset($_COOKIE[$cookie_nome])) {
 <link rel="stylesheet" href="style.css">
 <head>
     <title>Sorteador de Pokémons</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
-    <h1>Sorteador de Pokémons</h1>
-    <form method="post">
-        <input type="submit" name="sortear" value="Sortear um Pokemon" />
-    </form>
+
     <a href="../home">Voltar para o Menu Inicial</a>
 </div>
 </body>
