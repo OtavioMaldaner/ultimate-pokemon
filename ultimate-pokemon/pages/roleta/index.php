@@ -54,7 +54,7 @@ $pokemons = array("Venusaur.png",
 $cookie_nome = "ultimo_sorteio";
 
 // Definir o tempo de expiração do cookie em segundos (um dia)
-$cookie_expira = 86400;
+$cookie_expira = 10; //86400;
 
 // Verificar se o cookie existe
 if (isset($_COOKIE[$cookie_nome])) {
@@ -72,7 +72,7 @@ if (isset($_COOKIE[$cookie_nome])) {
         echo "<img src=\"../../database/media/$pokemon_sorteado\" alt=\"Pokemon sorteado\" />";
         echo "<a href=\"../../database/media/$pokemon_sorteado\" download>Download da imagem</a>";
         echo "<h2>Lembre se de fazer o download da imagem , pois se a página for recarregada, o pokemón será perdido!</h2>";
-        echo "<h2>Envie essa imagem para seu dispositivo móvel para pode scannear posteriormente</h2>";
+        echo "<h2>Envie essa imagem para seu dispositivo móvel para poder scannear posteriormente</h2>";
 
 
         // Definir o novo valor do cookie com a data atual
@@ -106,7 +106,7 @@ if (isset($_COOKIE[$cookie_nome])) {
 <body>
 <div class="container">
 
-    <a href="../home">Voltar para o Menu Inicial</a>
+    <a class="voltar" href="../home">Voltar para o Menu Inicial</a>
 </div>
 </body>
 </html>
