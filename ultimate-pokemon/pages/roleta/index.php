@@ -99,7 +99,7 @@ if (isset($_COOKIE[$cookie_nome])) {
 <link rel="stylesheet" href="style.css">
 <head>
     <title>Sorteador de Pokémons</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
