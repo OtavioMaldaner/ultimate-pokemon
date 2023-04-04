@@ -94,16 +94,17 @@ if (isset($_COOKIE[$cookie_nome])) {
 
 <!DOCTYPE html>
 <html lang="br">
-<link rel="stylesheet" href="style.css">
 <head>
     <title>Sorteador de Pokémons</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
     <h1>Sorteador de Pokémons</h1>
     <form method="post">
-        <input type="submit" name="sortear" value="Sortear um Pokemon" />
+        <div class="button">
+            <input type="submit" name="sortear" value="Sortear um Pokemon" />
+        </div>
     </form>
     <a href="../home">Voltar para o Menu Inicial</a>
 </div>
