@@ -71,8 +71,8 @@ if (isset($_COOKIE[$cookie_nome])) {
         echo "<h2>Parabéns, você sorteou:</h2>";
         echo "<img src=\"../../database/media/$pokemon_sorteado\" alt=\"Pokemon sorteado\" />";
         echo "<a href=\"../../database/media/$pokemon_sorteado\" download>Download da imagem</a>";
-        echo "<h3> Lembrando que você deve enviar essa imagem para seu dispositivo móvel para poder scannear posteriormente</h3>";
-        echo" <h2>Não saia dessa página sem fazer o dowload da imagem, se não o pokémon será perdido!</h2>";
+        echo "<h3>Lembrando que você deve enviar essa imagem para seu dispositivo móvel para poder scannear posteriormente.</h3>";
+        echo" <h3>Não saia dessa página sem fazer o dowload da imagem, se não o pokémon será perdido!</h3>";
 
 
         // Definir o novo valor do cookie com a data atual
