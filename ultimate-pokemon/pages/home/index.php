@@ -29,71 +29,72 @@ $pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
 
 <body>
     <div class="container">
-        <div class="home-navbar">
-            <div class="navbar-util">
-                <div class="logo-area">
-
+        <header>
+            <nav>
+                <a class="logo" href="/">Ultimate Pokémon</a>
+                <div class="mobile-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
                 </div>
-                <div class="nav-fields">
-                    <a class="nav-option" href="../home">Home</a>
-                    <a class="nav-option" href="../battle">Batalha</a>
-                    <a class="nav-option" href="../roleta">Adquirir pokémon</a>
-                    <a class="nav-option" href="../edit-account">Editar conta</a>
-                    <a class="nav-option" href="../IA_Pokemon">Scannear pokemon</a>
-                </div>
-                <div class="logout-area">
-                    <a href="../login/logout.php">
-                        <img src="../../assets/logout.svg" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <?php
-        if (count($pokemons_carteira) > 0) {
-            echo "<div class=\"pokemon-carousel\">";
-            echo "<button class=\"arrow-left control\" aria-label=\"Previous image\">";
-            echo "<img src=\"../../assets/flecha.svg\">";
-            echo "</button>";
+                <ul class="nav-list">
+                    <li><a href="../home">Home</a></li>
+                    <li><a href="../battle">Batalha</a></li>
+                    <li><a href="../roleta">Adquirir Pokémon</a></li>
+                    <li><a href="../edit-account">Editar conta</a></li>
+                    <li><a href="../IA_Pokemon">Escanear Pokémon</a></li>
+                    <li><a href="../login/logout.php"><img src="../../assets/logout.svg" alt=""></a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
 
-            echo "<div class=\"gallery-wrapper\">";
-            echo "<div class=\"gallery\">";
-            foreach ($pokemons_carteira as $pokemons) {
-                $id = $pokemons->getIdPokemon();
-                $pokemon = Pokemon::find($id);
-                $img = Media::findMediaByPokemon($id);
+            <?php
+            if (count($pokemons_carteira) > 0) {
+                echo "<div class=\"pokemon-carousel\">";
+                echo "<button class=\"arrow-left control\" aria-label=\"Previous image\">";
+                echo "<img src=\"../../assets/flecha.svg\">";
+                echo "</button>";
+
+                echo "<div class=\"gallery-wrapper\">";
+                echo "<div class=\"gallery\">";
+                foreach ($pokemons_carteira as $pokemons) {
+                    $id = $pokemons->getIdPokemon();
+                    $pokemon = Pokemon::find($id);
+                    $img = Media::findMediaByPokemon($id);
 
 
 
-                echo "<div class=\"item current-item animated-carousel\">";
-                echo "<h2 class=\"pokemon-type\">" . $pokemon->getTipo() . "</h2>";
-                echo "<h1 class=\"pokemon-name\">" . $pokemon->getNome() . "</h1>";
-                echo "<h3 class=\"pokemon-owner\">" . $_SESSION['nickName'] . "</h3>";
-                echo "<img src=\"../../database/media/{$img->getPath()}\" alt=\"Default icon\">";
-                echo "<div class=\"additional-infos\">" . "<div class=\"stat-field\"><span>Overall</span><span class=\"pokemon-over\">" . $pokemon->getOver() . "</span></div>" . "<div class=\"stat-field\"><span >Altura</span><span class=\"pokemon-height\">" . $pokemon->getAltura() . "</span></div>" . "<div class=\"stat-field\"><span >Peso</span><span class=\"pokemon-weight\">" . $pokemon->getPeso() . "</span></div>" . "</div>";
-                echo "<a href='formDelete.php?id={$pokemons->getIdTransacao()}'>Excluir</a>";
+                    echo "<div class=\"item current-item animated-carousel\">";
+                    echo "<h2 class=\"pokemon-type\">" . $pokemon->getTipo() . "</h2>";
+                    echo "<h1 class=\"pokemon-name\">" . $pokemon->getNome() . "</h1>";
+                    echo "<h3 class=\"pokemon-owner\">" . $_SESSION['nickName'] . "</h3>";
+                    echo "<img src=\"../../database/media/{$img->getPath()}\" alt=\"Default icon\">";
+                    echo "<div class=\"additional-infos\">" . "<div class=\"stat-field\"><span>Overall</span><span class=\"pokemon-over\">" . $pokemon->getOver() . "</span></div>" . "<div class=\"stat-field\"><span >Altura</span><span class=\"pokemon-height\">" . $pokemon->getAltura() . "</span></div>" . "<div class=\"stat-field\"><span >Peso</span><span class=\"pokemon-weight\">" . $pokemon->getPeso() . "</span></div>" . "</div>";
+                    echo "<a href='formDelete.php?id={$pokemons->getIdTransacao()}'>Excluir</a>";
+                    echo "</div>";
+                }
                 echo "</div>";
+                echo "</div>";
+                echo "<button class=\"arrow-right control\" aria-label=\"Next image\">";
+                echo "<img src=\"../../assets/flecha.svg\">";
+                echo "</button>";
+                echo "<div class=\"mobile-arrows\">";
+                echo "<div class=\"control mobile-arrow-left\" aria-label=\"Previous image\">";
+                echo "<img src=\"../../assets/flecha.svg\" alt=\"\">";
+                echo "</div>";
+                echo "<div class=\"control mobile-arrow-right\" aria-label=\"Next image\">";
+                echo "<img src=\"../../assets/flecha.svg\">";
+                echo "</div>";
+                echo "</div>";
+            } else {
+            ?>
+                <h3 class="no-pokemons">Você ainda não possui nenhum Pokémon !</h3>
+                <a href="../roleta" class="add-pokemon">Adicione um Pokémon à sua Pokédex</a>
+            <?php
             }
-            echo "</div>";
-            echo "</div>";
-            echo "<button class=\"arrow-right control\" aria-label=\"Next image\">";
-            echo "<img src=\"../../assets/flecha.svg\">";
-            echo "</button>";
-            echo "<div class=\"mobile-arrows\">";
-            echo "<div class=\"control mobile-arrow-left\" aria-label=\"Previous image\">";
-            echo "<img src=\"../../assets/flecha.svg\" alt=\"\">";
-            echo "</div>";
-            echo "<div class=\"control mobile-arrow-right\" aria-label=\"Next image\">";
-            echo "<img src=\"../../assets/flecha.svg\">";
-            echo "</div>";
-            echo "</div>";
-        } else {
-        ?>
-            <h3 class="no-pokemons">Você ainda não possui nenhum Pokémon !</h3>
-            <a href="../roleta" class="add-pokemon">Adicione um Pokémon à sua Pokédex</a>
-        <?php
-        }
-        ?>
-
+            ?>
+        </main>
     </div>
 </body>
 
@@ -123,7 +124,10 @@ $pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
             } else if (currentItem < 0) {
                 currentItem = maxItems - 1;
             }
-            items.forEach(item => {item.classList.remove('current-item'); item.classList.remove('animated-carousel')});
+            items.forEach(item => {
+                item.classList.remove('current-item');
+                item.classList.remove('animated-carousel')
+            });
             items[currentItem].classList.add('current-item');
             clearInterval(carouselInterval);
         })
@@ -138,6 +142,7 @@ $pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
         interval = 3000;
     }, interval ? interval : 3000);
 </script>
+<script src="mobile-navbar.js"></script>
 
 
 </html>
