@@ -54,7 +54,7 @@ $pokemons = array("Venusaur.png",
 $cookie_nome = "ultimo_sorteio";
 
 // Definir o tempo de expiração do cookie em segundos (um dia)
-$cookie_expira = 10; //86400;
+$cookie_expira = 1; //86400;
 
 // Verificar se o cookie existe
 if (isset($_COOKIE[$cookie_nome])) {
@@ -82,7 +82,7 @@ if (isset($_COOKIE[$cookie_nome])) {
     // Sortear um novo pokemon
     $sorteado = rand(0, count($pokemons) - 1);
     $pokemon_sorteado = $pokemons[$sorteado];
-    echo "<h2>Parabéns, você sorteou:</h2>";
+    echo "<h1>Parabéns, você sorteou:</h1>";
     echo "<img src=\"../../database/media/$pokemon_sorteado\" alt=\"Pokemon sorteado\" />";
     echo "<a href=\"../../database/media/$pokemon_sorteado\" download>Download da imagem</a>";
     echo "<h2>Lembre se de fazer o download da imagem , pois se a página for recarregada, o pokemón será perdido!</h2>";
@@ -104,9 +104,20 @@ if (isset($_COOKIE[$cookie_nome])) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-
-    <a class="voltar" href="../home">Voltar para o Menu Inicial</a>
+<div class="homepage-container">
+    <div class="homepage-util-arena">
+        <div class="hp-superior-part">
+            <div class="hp-bottom-part">
+                <div class="hp-button-space">
+                    <a class="voltar" href="../home">
+                        <div class="hp-button">
+                            <p>Voltar</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
