@@ -34,7 +34,6 @@ $pokemons = array("Venusaur.png",
 "Golem.png",
 "Gengar.png",
 "Onix.png",
-"Rydhon.png",
 "Magmar.png",
 "Gyarados.png",
 "Lapras.png",
@@ -54,7 +53,7 @@ $pokemons = array("Venusaur.png",
 $cookie_nome = "ultimo_sorteio";
 
 // Definir o tempo de expiração do cookie em segundos (um dia)
-$cookie_expira = 1; //86400;
+$cookie_expira = 86400;
 
 // Verificar se o cookie existe
 if (isset($_COOKIE[$cookie_nome])) {
@@ -63,7 +62,7 @@ if (isset($_COOKIE[$cookie_nome])) {
 
     // Verificar se já passou um dia desde o último sorteio
     if (($agora - $ultimo_sorteio) < $cookie_expira) {
-        echo "<p>Você já sorteou hoje. Tente novamente amanhã.</p>";
+        echo "<h1>Você já sorteou hoje. Tente novamente amanhã.</h1>";
     } else {
         // Sortear um novo pokemon
         $sorteado = rand(0, count($pokemons) - 1);

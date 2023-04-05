@@ -62,7 +62,7 @@ if (isset($_POST["save"])) {
                 </div>
             </div>
         </div>
-        <div class="button scan-button" onclick="init()">Iniciar reconhecimento</div>
+        <div class="button scan-button" onclick="init()">Qual é esse Pokémon?</div>
         <div id="webcam-container"></div>
         <div id="label-container"></div>
 

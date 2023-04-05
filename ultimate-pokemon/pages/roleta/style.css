@@ -121,3 +121,6 @@ a {
     font-size: 24px;
     color: #c62828;
 }
+a {
+    text-decoration: none;
+}
