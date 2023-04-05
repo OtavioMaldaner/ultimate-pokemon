@@ -58,6 +58,11 @@ $pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
                         $vencedor = Player::batalha(intval($_SESSION['idPlayer']), intval($_GET['idOpponent']));
                         $player_vencedor = Player::find($vencedor);
                         echo "<h1 class='users-list-title'> O player vencedor foi {$player_vencedor->getNickName()} </h1>";
+                        echo "<h1 class=\"user-deck\">Pokémons do adversário:</h1>";
+                        $opponentPokemons = Wallet::getPlayerWallet(intval($_GET['idOpponent']));
+                        foreach ($opponentPokemons as $pokemon) {
+                            
+                        }
                         echo "<a href='index.php'>Batalhar novamente</a>";
 
                     } else {
