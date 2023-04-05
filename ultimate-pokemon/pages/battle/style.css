@@ -89,3 +89,12 @@ a {
     text-decoration: none;
     padding: 5px 10px;
 }
+.pokemonImg {
+    width: 100px;
+    height: 100px;
+}
+.pokemonsAdversarios {
+    display: flex;
+    flex-direction: row;
+
+}

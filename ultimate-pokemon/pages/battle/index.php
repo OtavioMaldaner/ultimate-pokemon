@@ -59,12 +59,22 @@ $pokemons_carteira = Wallet::getPlayerWallet($_SESSION['idPlayer']);
                         $player_vencedor = Player::find($vencedor);
                         echo "<h1 class='users-list-title'> O player vencedor foi {$player_vencedor->getNickName()} </h1>";
                         echo "<h1 class=\"user-deck\">Pokémons do adversário:</h1>";
+                        ?>
+                <div class="pokemonsAdversarios">
+                    <?php
                         $opponentPokemons = Wallet::getPlayerWallet(intval($_GET['idOpponent']));
                         foreach ($opponentPokemons as $pokemon) {
+                            $id = $pokemon->getIdPokemon();
+                            $pokemon = Pokemon::find($id);
+                            $img = Media::findMediaByPokemon($id);
+                            echo "<img src=\"../../database/media/{$img->getPath()}\" alt=\"Default icon\" class='pokemonImg'>";
                             
                         }
-                        echo "<a href='index.php'>Batalhar novamente</a>";
 
+                        ?>
+                </div>
+                <?php
+                        echo "<a href='index.php'>Batalhar novamente</a>";
                     } else {
                         echo "<h1 class='users-list-title'>Usuários disponíveis para batalha</h1>";
 
