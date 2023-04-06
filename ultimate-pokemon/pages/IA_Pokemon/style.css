@@ -4,6 +4,12 @@
 body,
 html {
     min-height: 100vh;
+    width: 100vw;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 p,
@@ -21,13 +27,13 @@ a {
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /*justify-content: center;*/
     align-items: center;
     height: 100vh;
     background: linear-gradient(135deg, var(--bg-color-1), var(--bg-color-2));
     background-repeat: no-repeat;
     color: var(--seconadry-text-color);
-    width: 100%;
+    /*width: 100%;*/
     gap: 50px;
 }
 
@@ -39,12 +45,27 @@ a {
 }
 
 .navbar-util {
-    max-width: 1200px;
+    max-width: 2200px;
     min-width: 320px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
+} 
+
+header {
+    position: relative;
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0.5px;
 }
 
 .nav-fields {
@@ -64,6 +85,12 @@ a {
 
 .nav-fields a:hover {
     opacity: 1;
+}
+
+.logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
 }
 
 .container .button {
@@ -116,4 +143,53 @@ a {
       100% {
         transform: scale(1);
       }
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background: #23232e;
+    height: 8vh;
+    width: 100vw;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+.mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+    opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
 }

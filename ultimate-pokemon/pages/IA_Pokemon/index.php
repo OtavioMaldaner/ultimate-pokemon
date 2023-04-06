@@ -43,25 +43,35 @@ if (isset($_POST["save"])) {
 <body>
 
     <div class="container">
-        <div class="home-navbar">
-            <div class="navbar-util">
-                <div class="logo-area">
+        <header>
+            <nav>
+                <div class="home-navbar">
+                    <div class="navbar-util">
 
+                        <a class="logo" href="/">Ultimate Pokémon</a>
+                        <div class="mobile-menu">
+                            <div class="line1"></div>
+                            <div class="line2"></div>
+                            <div class="line3"></div>
+                        </div>
+                        <ul class="nav-list">
+                            <li><a class="nav-option" href="../home">Home</a></li>
+                            <li><a class="nav-option" href="../battle">Batalha</a></li>
+                            <li><a class="nav-option" href="../roleta">Adquirir pokémon</a></li>
+                            <li><a class="nav-option" href="../edit-account">Editar conta</a></li>
+                            <li><a class="nav-option" href="../IA_Pokemon">Escanear pokemon</a></li>
+                        </ul>
+                        <div class="logout-area">
+                            <ul>
+                                <li><a href="../login/logout.php">
+                                    <img src="../../assets/logout.svg" alt="">
+                                </a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="nav-fields">
-                    <a class="nav-option" href="../home">Home</a>
-                    <a class="nav-option" href="../battle">Batalha</a>
-                    <a class="nav-option" href="../roleta">Adquirir pokémon</a>
-                    <a class="nav-option" href="../edit-account">Editar conta</a>
-                    <a class="nav-option" href="../IA_Pokemon">Scannear pokemon</a>
-                </div>
-                <div class="logout-area">
-                    <a href="../login/logout.php">
-                        <img src="../../assets/logout.svg" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
+            </nav>
+        </header>
         <div class="button scan-button" onclick="init()">Qual é esse Pokémon?</div>
         <div id="webcam-container"></div>
         <div id="label-container"></div>
